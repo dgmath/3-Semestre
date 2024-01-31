@@ -21,7 +21,7 @@ export default function App() {
 
       <Image
         style={styles.image}
-        source={{ uri: "https://designportugal.net/wp-content/uploads/2016/04/m-mcdonalds.jpg" }}
+        source={{uri: "https://designportugal.net/wp-content/uploads/2016/04/m-mcdonalds.jpg" }}
       />
 
       <Text style={styles.textLogin}>Login</Text>
