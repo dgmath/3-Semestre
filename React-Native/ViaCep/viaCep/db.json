@@ -1,0 +1,13 @@
+{
+    "cep": [
+        {
+            "id": 1,
+            "cep": "03918020",
+            "logradouro": "Rua la de casa",
+            "bairro": "Bairro la",
+            "localidade":"Guarulhos",
+            "estado":"São Paulo",
+            "uf": "SP"
+        }
+    ]
+}
