@@ -5,14 +5,14 @@ export const Input = ({
     editable,
     fieldValue,
     onChangeText,
-    keyType,
+    keyboardType,
     maxLength
 }) => {
     return(
         <InputText
             placeholder={placeholder}
             editable={editable}
-            keyType={keyType}
+            keyboardType={keyboardType}
             maxLength={maxLength}
             value={fieldValue}
             onChangeText={onChangeText}
