@@ -1,6 +1,7 @@
 import { InputDiagnostico, InputPerfil, InputProntuario } from "./Style"
 
 export const Input = ({
+    customHeight,
     placeholder,
     editable,
     fieldValue,
@@ -16,39 +17,22 @@ export const Input = ({
             maxLength={maxLength}
             value={fieldValue}
             onChangeText={onChangeText}
-        />
-
-        
-    )
-}
-export const InputD= ({
-    placeholder,
-    editable,
-    fieldValue,
-    onChangeText,
-    keyboardType,
-    maxLength
-}) => {
-    return(
-        <InputDiagnostico
-            placeholder={placeholder}
-            editable={editable}
-            keyboardType={keyboardType}
-            maxLength={maxLength}
-            value={fieldValue}
-            onChangeText={onChangeText}
+            customHeight={customHeight}
         />
 
         
     )
 }
 export const InputP= ({
+    customHeight,
     placeholder,
     editable,
     fieldValue,
     onChangeText,
     keyboardType,
-    maxLength
+    maxLength,
+    customP
+
 }) => {
     return(
         <InputProntuario
@@ -58,6 +42,8 @@ export const InputP= ({
             maxLength={maxLength}
             value={fieldValue}
             onChangeText={onChangeText}
+            customHeight={customHeight}
+            customP={customP}
         />
 
         

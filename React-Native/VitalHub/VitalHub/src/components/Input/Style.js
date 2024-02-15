@@ -49,7 +49,7 @@ export const InputPerfil = styled.TextInput.attrs({
 export const InputProntuario = styled.TextInput.attrs({
     placeholderTextColor: '#34898F'
 })`
-    height: 121px;
+    height: ${(props) => `${props.customHeight}`};
     border: 1px solid #49B3BA;
     border-radius: 5px;
     font-family: 'MontserratAlternates_600SemiBold';
@@ -57,11 +57,7 @@ export const InputProntuario = styled.TextInput.attrs({
     margin-bottom: 15px;
     padding-left: 16px;
     color: #4E4B59;
-    padding-bottom: 60px;
-`
-export const InputDiagnostico = styled(InputProntuario)`
-    height:53px;
-    padding-bottom: 0px;
+    padding-bottom: ${(props) => `${props.customP}`}; 
 `
 
 

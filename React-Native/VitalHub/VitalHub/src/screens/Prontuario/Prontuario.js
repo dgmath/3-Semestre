@@ -28,8 +28,10 @@ export const Prontuario = () => {
                 maxLength={10}
                 editable={true}
                 fieldWidth={80}
+                customHeight={120}
+                customP={60}
             />
-            <BoxInput3
+            <BoxInput2
                 textLabel='Diagnóstico do paciente'
                 placeholder='Diagnóstico'
                 keyboardType='numeric'
@@ -44,6 +46,8 @@ export const Prontuario = () => {
                 maxLength={100}
                 editable={true}
                 fieldWidth={80}
+                customHeight={120}
+                customP={60}
             />
 
             <ButtonPerfil>

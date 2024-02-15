@@ -7,3 +7,8 @@ export const ImagePerfil = styled.ImageBackground`
     margin-bottom: 80px;
     /* justify-content: flex-end; */
 `
+
+export const ImageHeader = styled.Image`
+    width: 30px;
+    height: 30px;
+`
