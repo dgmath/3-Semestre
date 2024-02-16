@@ -9,6 +9,10 @@ export const ImagePerfil = styled.ImageBackground`
 `
 
 export const ImageHeader = styled.Image`
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
+`
+export const ImageCard = styled.Image`
+    width: 80px;
+    height:80px;
 `

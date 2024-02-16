@@ -7,7 +7,6 @@ import { Button, ButtonTitle, ButtonGoogle, ButtonGoogleTitle } from "../../comp
 import { LinkMedium, LinkMediumBlue } from "../../components/LinkMedium/Style"
 import { ContentAccount } from "../../components/ContentAccount/Style"
 import { TextAccount } from "../../components/TextAccount/Style"
-import { GoogleIcon } from "../../components/Google/Style"
 
 import { AntDesign } from '@expo/vector-icons';
 

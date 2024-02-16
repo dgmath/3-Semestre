@@ -11,6 +11,26 @@ export const TitleBlack = styled(Title)`
     color: #4E4B59;
     margin-bottom: 10px;
 `
+export const TextGray = styled.Text`
+    font-family: 'Quicksand_500Medium';
+    font-size: 14px;
+    color: #4E4B59;
+`
+export const TextGrayRegular = styled(TextGray)`
+    font-family: 'Quicksand_400Regular';
+    font-size: 14px;
+    color: #4E4B59;
+`
+export const TextGraySemiBold = styled(TextGray)`
+    font-family: 'Quicksand_600SemiBold';
+    font-size: 14px;
+    color: #8C8A97;
+`
+export const UserName = styled.Text`
+    font-family: 'MontserratAlternates_600SemiBold';
+    font-size: 16px;
+    color: #FBFBFB;
+`
 
 export const Subtitle = styled.Text`
     font-family: 'MontserratAlternates_500Medium';

@@ -47,3 +47,26 @@ export const ButtonGoogleTitle = styled(ButtonTitle)`
     color: #496BBA;
     margin-left: 29px;
 `;
+
+export const ButtonCad = styled.TouchableOpacity`
+    width: 28%;
+    height: 39px;
+    background-color: #496BBA;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+`
+export const ButtonCadWhite = styled(ButtonCad)`
+    background-color: #FBFBFB;
+    border: 2px solid #607EC5;
+`
+export const ButtonTextCad = styled.Text`
+    font-family: 'MontserratAlternates_600SemiBold';
+    color: #FBFBFB;
+    font-size: 12px;
+`
+export const ButtonTextCadBlue = styled(ButtonTextCad)`
+    font-family: 'MontserratAlternates_600SemiBold';
+    color: #607EC5;
+    font-size: 12px;
+`

@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts, Montserrat_700Bold, Montserrat_600SemiBold, Montserrat_500Medium } from '@expo-google-fonts/montserrat';
 import { MontserratAlternates_500Medium, MontserratAlternates_700Bold, MontserratAlternates_600SemiBold } from '@expo-google-fonts/montserrat-alternates';
-import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
+import { Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Navegacao } from './src/screens/Navegacao/Navegacao';
@@ -13,6 +13,7 @@ import { NovaSenha } from './src/screens/NovaSenha/NovaSenha';
 import { Cadastro } from './src/screens/Cadastro/Cadastro';
 import { Perfil } from './src/screens/Perfil/Perfil';
 import { Prontuario } from './src/screens/Prontuario/Prontuario';
+import { MedicosConsulta } from './src/screens/MedicosConsulta/MedicosConsulta';
 
 
 const Stack = createNativeStackNavigator()
@@ -26,6 +27,7 @@ export default function App() {
     Montserrat_500Medium, 
     Montserrat_600SemiBold, 
     Montserrat_700Bold, 
+    Quicksand_400Regular,
     Quicksand_500Medium, 
     Quicksand_600SemiBold, 
     Quicksand_700Bold
@@ -85,6 +87,11 @@ export default function App() {
               name='Prontuario'
               component={Prontuario}
               options={{ title: "Prontuário" }}
+            />
+            <Stack.Screen
+              name='Home'
+              component={MedicosConsulta}
+              options={{ title: "Consultas" }}
             />
           </Stack.Navigator>
         </NavigationContainer>
