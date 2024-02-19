@@ -23,8 +23,13 @@ export const TextGrayRegular = styled(TextGray)`
 `
 export const TextGraySemiBold = styled(TextGray)`
     font-family: 'Quicksand_600SemiBold';
-    font-size: 14px;
     color: #8C8A97;
+`
+export const TextBlue = styled(TextGraySemiBold)`
+    color: #49B3BA;
+`
+export const TextRed = styled(TextGraySemiBold)`
+    color: #C81D25;
 `
 export const UserName = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';

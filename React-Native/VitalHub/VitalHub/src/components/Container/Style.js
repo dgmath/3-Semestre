@@ -33,13 +33,33 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 `
 export const DataUser = styled.View`
-    gap: 5px;
+    gap: 10px;
 `
 export const BoxUser = styled.SafeAreaView`
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 10px;
+`
+export const BoxCard = styled.SafeAreaView`
+    flex-direction: row;
+    /* justify-content: start; */
+    margin-left: 40px;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+`
+export const TimeBox = styled.View`
+    width: 90px;
+    height: 26px;
+    gap: 5px;
+    border-radius: 5px;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* gap: 10px; */
+    background-color: #E8FCFD;
+    justify-content: center;
 `
 
 
@@ -60,8 +80,8 @@ export const ContainerShadow = styled.SafeAreaView`
 `
 export const ContainerShadowConsultas = styled.SafeAreaView`
     background-color: #FBFBFB;
-    width: 90%;
-    height: 100px;
+    width: 85%;
+    height: 110px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     align-items: center;
@@ -78,9 +98,8 @@ export const ContainerInput = styled.SafeAreaView`
 
 export const ContainerButton = styled.View`
     flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
+    width: 90%;
+    justify-content: space-between;
 `
 
 export const TextBox = styled.View`
@@ -99,4 +118,11 @@ export const Circle = styled.View`
     background-color: #D9D9D9;
     width: 3px;
     height: 3px;
+`
+export const CancelBox = styled.View`
+    	flex-direction: row;
+        align-items: center;
+        width: 80%;
+        padding-right: 10px;
+        justify-content: space-between;
 `
