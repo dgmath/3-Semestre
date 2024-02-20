@@ -58,7 +58,7 @@ export const TimeBox = styled.View`
     /* justify-content: space-between; */
     align-items: center;
     /* gap: 10px; */
-    background-color: #E8FCFD;
+    background-color: ${(props) => props.situacao == 'pendente' ? '#E8FCFD' : '#F1F0F5'};
     justify-content: center;
 `
 
@@ -80,13 +80,15 @@ export const ContainerShadow = styled.SafeAreaView`
 `
 export const ContainerShadowConsultas = styled.SafeAreaView`
     background-color: #FBFBFB;
-    width: 85%;
+    width: 90%;
     height: 110px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 0px auto;
+    margin-bottom: 12px;
+    padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
 `
 export const ContainerInput = styled.SafeAreaView`
     width: 80%;

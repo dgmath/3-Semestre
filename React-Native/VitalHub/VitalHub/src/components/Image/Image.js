@@ -13,6 +13,6 @@ export const ImageHeader = styled.Image`
     height: 60px;
 `
 export const ImageCard = styled.Image`
-    width: 80px;
+    width: 77px;
     height:80px;
 `

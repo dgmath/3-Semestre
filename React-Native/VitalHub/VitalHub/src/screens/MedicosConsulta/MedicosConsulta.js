@@ -8,15 +8,24 @@ import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCadastro } from "../../components/ButtonCadastro/ButtonCadastro";
 import { CardPaciente } from "../../components/Paciente/Paciente";
+import { ListComponent } from "../../components/List/List";
+import { Footer, FooterBtn } from "../../components/Footer/Footer";
+import { ContainerFooter } from "../../components/Footer/Style";
 // import { TextGray, UserName } from "../../components/Title/Style"
 
-
+const Consultas = [
+    {id: 1, nome: 'Carlos', situacao: "pendente"},
+    {id: 2, nome: 'Carlos', situacao: "realizado"},
+    {id: 3, nome: 'Carlos', situacao: "cancelado"},
+    {id: 4, nome: 'Carlos', situacao: "realizado"},
+    {id: 5, nome: 'Carlos', situacao: "cancelado"},
+]
 
 export const MedicosConsulta = () => {
 
-    const [statusLista, setStatusLista] = useState("pendente")
+    const [statusLista, setStatusLista] = useState("realizado")
     return(
-        <ScrollForm>
+        // <ScrollForm>
             <ContainerConsulta>
                     <Header/>
 
@@ -42,12 +51,20 @@ export const MedicosConsulta = () => {
                         />
                     </ContainerButton>
 
-                    <CardPaciente
-                        name={'Catarina'}
-                        age={'17'}
-                        type={'Rotina'}
-                        time={'14:00'}
-                    />
+                        <ListComponent
+                    
+                            data={Consultas}
+                            keyExtractor={(item) => item.id}
+                            renderItem={({item}) =>
+                        statusLista == item.situacao && (
+                        <CardPaciente
+                            name={'Catarina'}
+                            age={'17 anos'}
+                            type={'Rotina'}
+                            time={'14:00'}
+                            situacao={item.situacao}
+                            />)}
+                        />
                     {/* <ContainerShadowConsultas>
                         <BoxCard>
                             <ImageCard
@@ -74,8 +91,10 @@ export const MedicosConsulta = () => {
                             </DataUser>
                         </BoxCard>
                     </ContainerShadowConsultas> */}
-                    
+                <Footer
+                
+                />
             </ContainerConsulta>
-        </ScrollForm>
+        // </ScrollForm>
     )
 }
