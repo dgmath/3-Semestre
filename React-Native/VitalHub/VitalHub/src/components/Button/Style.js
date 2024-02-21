@@ -10,6 +10,7 @@ export const Button = styled.TouchableOpacity`
     justify-content: center;
     margin-top: 15px;
 `
+
 export const ButtonPerfil = styled(Button)`
     width: 80%;
     margin-bottom: 10px;

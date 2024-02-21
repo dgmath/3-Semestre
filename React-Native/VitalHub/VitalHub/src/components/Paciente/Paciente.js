@@ -36,7 +36,7 @@ export const CardPaciente = ({
                     <CancelBox>
                         <TimeBox situacao={situacao}>
                             <MaterialCommunityIcons name="clock" size={14} color={situacao == 'pendente' ? "#49B3BA" : "#4E4B59"} />
-                            <TextBold situacao={situacao} color={'#49B3BA'}>{time}</TextBold>
+                            <TextBold situacao={situacao} >{time}</TextBold>
                         </TimeBox>
 
                         {
@@ -44,11 +44,11 @@ export const CardPaciente = ({
                                 <></>
                             ) : situacao == 'pendente' ?
                             (
-                            <TouchableOpacity situacao={situacao}>
-                            <ButtonText situacao={situacao}>Cancelar</ButtonText>
+                            <TouchableOpacity onPress={onPressCancel} situacao={situacao}>
+                            <ButtonText  situacao={situacao}>Cancelar</ButtonText>
                             </TouchableOpacity>
                             ): (
-                                <TouchableOpacity situacao={situacao}>
+                                <TouchableOpacity onPress={onPressAppointment} situacao={situacao}>
                                 <ButtonText situacao={situacao}>Ver prontuário</ButtonText>
                                 </TouchableOpacity>
                             )
