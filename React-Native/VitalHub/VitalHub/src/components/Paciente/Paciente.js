@@ -3,7 +3,7 @@ import { BoxCard, BoxCircle, CancelBox, Circle, ContainerShadowConsultas, DataUs
 import { ImageCard } from "../Image/Image";
 import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from "../Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { ButtonText, TextBold } from "./Style";
+import { ButtonCancel, ButtonText, TextBold } from "./Style";
 
 
 export const CardPaciente = ({
@@ -13,14 +13,16 @@ export const CardPaciente = ({
     time,
     situacao,
     onPressCancel,
-    onPressAppointment
+    onPressAppointment,
+    source
 
 }) => {
     return (
         <ContainerShadowConsultas>
             <BoxCard>
                 <ImageCard
-                    source={require('../../../src/assets/img/ImageCard.png')}
+                //require('../../../src/assets/img/ImageCard.png')
+                    source={source}
                 />
                 <DataUser>
                     <TextBox>
@@ -44,9 +46,9 @@ export const CardPaciente = ({
                                 <></>
                             ) : situacao == 'pendente' ?
                             (
-                            <TouchableOpacity onPress={onPressCancel} situacao={situacao}>
+                            <ButtonCancel onPress={onPressCancel} situacao={situacao}>
                             <ButtonText  situacao={situacao}>Cancelar</ButtonText>
-                            </TouchableOpacity>
+                            </ButtonCancel>
                             ): (
                                 <TouchableOpacity onPress={onPressAppointment} situacao={situacao}>
                                 <ButtonText situacao={situacao}>Ver prontuário</ButtonText>

@@ -1,16 +1,11 @@
 import { useState } from "react";
 import  CalendarList from "../../components/Calendar/Index";
-import { BoxCard, BoxCircle, CancelBox, Circle, ContainerButton, ContainerConsulta, ContainerShadowConsultas, DataUser, TextBox, TimeBox } from "../../components/Container/Style"
+import { ContainerButton, ContainerConsulta } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header";
-import { ImageCard } from "../../components/Image/Image"
-import { ScrollForm } from "../../components/ScrollForm/Style"
-import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from "../../components/Title/Style";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCadastro } from "../../components/ButtonCadastro/ButtonCadastro";
 import { CardPaciente } from "../../components/Paciente/Paciente";
 import { ListComponent } from "../../components/List/List";
 import { Footer } from "../../components/Footer/Footer";
-import { ContainerFooter } from "../../components/Footer/Style";
 import { CancelattionModal } from "../../components/CancelattionModal/CancelattionModal";
 import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal";
 // import { TextGray, UserName } from "../../components/Title/Style"
@@ -31,7 +26,7 @@ export const MedicosConsulta = () => {
     //state par exibição dos modais
 
     const [showModalCancel, setShowModalCancel] = useState(false)
-    const [showModalAppointment, setShowModalAppointment] = useState(true)
+    const [showModalAppointment, setShowModalAppointment] = useState(false)
 
     return(
             <ContainerConsulta>
@@ -41,25 +36,25 @@ export const MedicosConsulta = () => {
 
             {/* Botões */}
 
-                    <ContainerButton>
-                        <ButtonCadastro
-                            textButton={"Agendadas"}
-                            clickButton= {statusLista === "pendente"}
-                            onPress={() => setStatusLista("pendente")}
-                        />
-                        <ButtonCadastro
-                            textButton={"Realizadas"}
-                            clickButton= {statusLista === "realizado"}
-                            onPress={() => setStatusLista("realizado")}
+                        <ContainerButton>
+                            <ButtonCadastro
+                                textButton={"Agendadas"}
+                                clickButton= {statusLista === "pendente"}
+                                onPress={() => setStatusLista("pendente")}
+                            />
+                            <ButtonCadastro
+                                textButton={"Realizadas"}
+                                clickButton= {statusLista === "realizado"}
+                                onPress={() => setStatusLista("realizado")}
 
-                        />
-                        <ButtonCadastro
-                            textButton={"Canceladas"}
-                            clickButton= {statusLista === "cancelado"}
-                            onPress={() => setStatusLista("cancelado")}
+                            />
+                            <ButtonCadastro
+                                textButton={"Canceladas"}
+                                clickButton= {statusLista === "cancelado"}
+                                onPress={() => setStatusLista("cancelado")}
 
-                        />
-                    </ContainerButton>
+                            />
+                        </ContainerButton>
 
             {/* Lista */}
 
@@ -70,7 +65,9 @@ export const MedicosConsulta = () => {
                             keyExtractor={(item) => item.id}
                             renderItem={({item}) =>
                             statusLista == item.situacao && (
+                                
                             <CardPaciente
+                            source={require('../../../src/assets/img/ImageCard.png')}
                             name={'Catarina'}
                             age={'17 anos'}
                             type={'Rotina'}

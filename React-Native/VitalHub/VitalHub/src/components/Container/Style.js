@@ -128,3 +128,13 @@ export const CancelBox = styled.View`
         padding-right: 10px;
         justify-content: space-between;
 `
+export const MedicalContent = styled.View`
+    position: fixed;
+    left: 145px;
+    top: -80px;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-color: #49B3BA;
+    border-radius: 7px;
+`

@@ -24,14 +24,15 @@ export const Input = ({
     )
 }
 export const InputP= ({
-    customHeight,
+    customHeight = 53,
     placeholder,
     editable,
     fieldValue,
     onChangeText,
     keyboardType,
     maxLength,
-    customP
+    customP,
+    customWidth
 
 }) => {
     return(
@@ -43,6 +44,7 @@ export const InputP= ({
             value={fieldValue}
             onChangeText={onChangeText}
             customHeight={customHeight}
+            customWidth={customWidth}
             customP={customP}
         />
 

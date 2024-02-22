@@ -49,6 +49,9 @@ export const ButtonGoogleTitle = styled(ButtonTitle)`
     margin-left: 29px;
 `;
 
+export const BtnMedical = styled.TouchableOpacity`
+    
+`
 
 
 

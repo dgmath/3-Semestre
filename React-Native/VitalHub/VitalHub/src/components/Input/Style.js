@@ -49,8 +49,9 @@ export const InputPerfil = styled.TextInput.attrs({
 export const InputProntuario = styled.TextInput.attrs({
     placeholderTextColor: '#34898F'
 })`
-    height: ${(props) => `${props.customHeight}`};
-    border: 1px solid #49B3BA;
+    width: ${(props) => `${props.customWidth}%`};
+    height: ${(props) => `${props.customHeight}px`};
+    border: 2px solid #49B3BA;
     border-radius: 5px;
     font-family: 'MontserratAlternates_600SemiBold';
     font-size: 14px;

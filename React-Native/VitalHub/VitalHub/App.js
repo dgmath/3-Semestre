@@ -14,6 +14,8 @@ import { Cadastro } from './src/screens/Cadastro/Cadastro';
 import { Perfil } from './src/screens/Perfil/Perfil';
 import { Prontuario } from './src/screens/Prontuario/Prontuario';
 import { MedicosConsulta } from './src/screens/MedicosConsulta/MedicosConsulta';
+import { PacienteConsulta } from './src/screens/PacienteConsulta/PacienteConsulta';
+import { Clinica } from './src/screens/Clinica/Clinica';
 
 
 const Stack = createNativeStackNavigator()
@@ -92,6 +94,16 @@ export default function App() {
               name='Home'
               component={MedicosConsulta}
               options={{ title: "Consultas" }}
+            />
+            <Stack.Screen
+              name='HomePaciente'
+              component={PacienteConsulta}
+              options={{ title: "Consultas Paciente" }}
+            />
+            <Stack.Screen
+              name='Clinica'
+              component={Clinica}
+              options={{ title: "Clínicas" }}
             />
           </Stack.Navigator>
         </NavigationContainer>
