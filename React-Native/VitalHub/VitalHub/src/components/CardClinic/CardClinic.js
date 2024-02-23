@@ -1,23 +1,19 @@
-import { TouchableOpacity } from "react-native";
-import { BoxCard, BoxCircle, CancelBox, Circle, ContainerShadowConsultas, DataUser, TextBox, TimeBox } from "../Container/Style"
-import { ImageCard } from "../Image/Image";
-import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from "../Title/Style"
+import {  TitleBlack } from "../Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { ButtonCancel, ButtonText, IconContent, TextBold } from "./Style";
+import { BoxCard, BoxDay, ContainerShadowClinic, DayBox, IconContent, TextBlue, TextBox, TextCity, TextGold } from "./Style";
 import { AntDesign } from '@expo/vector-icons';
 
 
-export const CardPaciente = ({
+export const CardClinic = ({
     name,
     rated,
     time,
-    situacao,
-    onPressCancel,
-    onPressAppointment,
+    border,
+    city
 
 }) => {
     return (
-        <ContainerShadowConsultas>
+        <ContainerShadowClinic border={border}>
             <BoxCard>
                     <TextBox>
                         <TitleBlack>{name}</TitleBlack>
@@ -26,15 +22,15 @@ export const CardPaciente = ({
                         <TextGold>{rated}</TextGold>
                         </IconContent>
                     </TextBox>
-                    <CancelBox>
-                        <TextCity></TextCity>
-                        <TimeBox>
-                            <MaterialCommunityIcons name="clock" size={14} color={"#49B3BA"} />
-                            <TextBold>{time}</TextBold>
-                        </TimeBox>
-                    </CancelBox>
+                    <BoxDay>
+                        <TextCity>{city}</TextCity>
+                        <DayBox>
+                            <MaterialCommunityIcons name="calendar-today" size={14} color="#49B3BA" />
+                            <TextBlue>{time}</TextBlue>
+                        </DayBox>
+                    </BoxDay>
                 
             </BoxCard>
-        </ContainerShadowConsultas>
+        </ContainerShadowClinic>
     )
 }

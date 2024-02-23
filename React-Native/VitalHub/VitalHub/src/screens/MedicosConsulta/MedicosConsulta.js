@@ -7,7 +7,7 @@ import { CardPaciente } from "../../components/Paciente/Paciente";
 import { ListComponent } from "../../components/List/List";
 import { Footer } from "../../components/Footer/Footer";
 import { CancelattionModal } from "../../components/CancelattionModal/CancelattionModal";
-import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal";
+import { AppointmentModal, AppointmentModalPaciente } from "../../components/AppointmentModal/AppointmentModal";
 // import { TextGray, UserName } from "../../components/Title/Style"
 
 const Consultas = [
@@ -67,6 +67,7 @@ export const MedicosConsulta = () => {
                             statusLista == item.situacao && (
                                 
                             <CardPaciente
+                            
                             source={require('../../../src/assets/img/ImageCard.png')}
                             name={'Catarina'}
                             age={'17 anos'}
@@ -74,7 +75,6 @@ export const MedicosConsulta = () => {
                             time={'14:00'}
                             situacao={item.situacao}
                             onPressCancel={() => setShowModalCancel(true)}
-                            onPressAppointment={() => setShowModalAppointment(true)}
                             />)}
                         />
 
@@ -87,7 +87,7 @@ export const MedicosConsulta = () => {
 
             {/* Modal Prontuário */}
 
-            <AppointmentModal
+            <AppointmentModalPaciente
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
             />

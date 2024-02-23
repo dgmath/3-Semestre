@@ -16,3 +16,6 @@ export const TextBold = styled.Text`
 export const ButtonCancel = styled.TouchableOpacity`
     width: 60px;
 `
+export const ButtonCancel2 = styled(ButtonCancel)`
+    width: auto;
+`

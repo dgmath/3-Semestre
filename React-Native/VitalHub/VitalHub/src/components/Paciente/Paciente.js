@@ -3,11 +3,12 @@ import { BoxCard, BoxCircle, CancelBox, Circle, ContainerShadowConsultas, DataUs
 import { ImageCard } from "../Image/Image";
 import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from "../Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { ButtonCancel, ButtonText, TextBold } from "./Style";
+import { ButtonCancel, ButtonCancel2, ButtonText, TextBold } from "./Style";
 
 
 export const CardPaciente = ({
     name,
+    onPressImage,
     age,
     type,
     time,
@@ -20,10 +21,12 @@ export const CardPaciente = ({
     return (
         <ContainerShadowConsultas>
             <BoxCard>
+                <ButtonCancel2 onPress={onPressImage}>
                 <ImageCard
                 //require('../../../src/assets/img/ImageCard.png')
                     source={source}
                 />
+                </ButtonCancel2>
                 <DataUser>
                     <TextBox>
                         <TitleBlack>{name}</TitleBlack>

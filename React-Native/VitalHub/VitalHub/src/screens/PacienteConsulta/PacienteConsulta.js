@@ -8,6 +8,7 @@ import { CardPaciente } from "../../components/Paciente/Paciente"
 import { FontAwesome6 } from '@expo/vector-icons';
 import { BtnMedical } from "../../components/Button/Style"
 import { ConsultModal } from "../../components/ConsultModal/ConsultModal"
+import { AppointmentModalPaciente } from "../../components/AppointmentModal/AppointmentModal"
 
 const ConsultasPaciente = [
     {id: 1, nome: 'Richard', situacao: "pendente"},
@@ -16,6 +17,7 @@ const ConsultasPaciente = [
 ]
 
 export const PacienteConsulta = () => {
+    const [showModalAppointment, setShowModalAppointment] = useState(false)
 
     const [showModalConsult, setShowModalConsult] = useState(false)
 
@@ -64,6 +66,7 @@ export const PacienteConsulta = () => {
             renderItem={({item}) => 
                 statusListaPaciente == item.situacao && (
                     <CardPaciente
+                    onPressImage={() => setShowModalAppointment(true)}
                     source={require('../../../src/assets/img/ImageDoctor.png')}
                     name={'Dr. Claudio'}
                     age={'30 anos'}
@@ -87,6 +90,11 @@ export const PacienteConsulta = () => {
                 setShowModalConsult={setShowModalConsult}
                 setStatusModal={setStatusModal}
                 statusModal={statusModal}
+            />
+            
+            <AppointmentModalPaciente
+                visible={showModalAppointment}
+                setShowModalAppointment={setShowModalAppointment}
             />
         </ContainerConsulta>
     )

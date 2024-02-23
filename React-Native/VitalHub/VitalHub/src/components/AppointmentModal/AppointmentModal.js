@@ -49,3 +49,48 @@ export const AppointmentModal = ({
         </Modal>
     )
 }
+export const AppointmentModalPaciente = ({
+    visible,
+    setShowModalAppointment,
+    ...rest
+    // rest todas as outras propriedades do modal de um determinado componente nativo assim como o modal estamos usando todas as suas propriedades
+}) => {
+    return(
+        <Modal 
+            {...rest} 
+            visible={visible} 
+            transparent={true}
+            animationType="fade"
+        >
+            {/* Container */}
+            <PatientModalAppointment>
+                {/* Content */}
+                <ModalAppointmentContent>
+
+                    <ImageModal
+                        source={require('../../../src/assets/img/ImageModalPaciente.png')}
+                    />
+
+                    {/* Titulo */}
+                    <TitleBlack>Dr. Claudio</TitleBlack>
+
+                    {/* Descrição */}
+                    <ModalContentText>
+                        <ModalAge>Cliníco geral</ModalAge>
+                        <ModalEmail>CRM-15286</ModalEmail>
+                    </ModalContentText>
+
+                     {/* Botão */}
+                    <ButtonModalAppointment>
+                        <ButtonTitle>Ver local da consulta</ButtonTitle>
+                    </ButtonModalAppointment>
+
+                    <ButtonAppointmentSecondary onPress={() => setShowModalAppointment(false)}>
+                        <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
+                    </ButtonAppointmentSecondary> 
+
+                </ModalAppointmentContent>
+            </PatientModalAppointment>
+        </Modal>
+    )
+}

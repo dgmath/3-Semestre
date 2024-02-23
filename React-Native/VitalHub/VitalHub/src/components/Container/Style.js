@@ -138,3 +138,21 @@ export const MedicalContent = styled.View`
     background-color: #49B3BA;
     border-radius: 7px;
 `
+
+export const ContainerClinic = styled.SafeAreaView`
+    flex: 1;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: center;
+    width: 100%;
+`
+export const ContainerClinica = styled(ContainerClinic)`
+    background-color: #FBFBFB;
+    margin-top: 0px;
+`
+export const ClinicContent = styled.View`
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+`

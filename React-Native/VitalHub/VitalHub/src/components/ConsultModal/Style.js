@@ -14,6 +14,7 @@ export const TitleBlackBold = styled.Text`
     font-size: 20px;
     color: #4E4B59;
     margin-bottom: 51px;
+    margin-top: 30px;
 `
 
 export const ModalContent = styled.View`
