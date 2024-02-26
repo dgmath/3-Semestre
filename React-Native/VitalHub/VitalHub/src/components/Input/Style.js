@@ -37,13 +37,16 @@ export const InputPerfil = styled.TextInput.attrs({
 
 })`
     font-family: 'MontserratAlternates_500Medium';
-    width: 100%;
-    height: 53px;
+    width: ${(props) => `${props.customWidth}%`};
+    height: ${(props) => `${props.customHeight}px`};
     /* border: 1px solid #ffff ; */
     border-radius: 5px;
     padding-left: 16px;
     background-color:#F5F3F3;
     margin-bottom: 24px;
+    padding-top: ${(props) => `${props.customP}`}; 
+    
+    
 
 `
 export const InputProntuario = styled.TextInput.attrs({

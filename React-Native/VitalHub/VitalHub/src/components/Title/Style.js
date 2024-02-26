@@ -11,6 +11,18 @@ export const TitleBlack = styled(Title)`
     color: #4E4B59;
     margin-bottom: 10px;
 `
+export const TitleBlack2 = styled(Title)`
+    color: black;
+    margin-bottom: 8px;
+`
+export const TextBlack = styled.Text`
+    font-family: 'Quicksand_500Medium';
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 10px;
+`
 export const TextGray = styled.Text`
     font-family: 'Quicksand_500Medium';
     font-size: 14px;
@@ -31,6 +43,11 @@ export const TextBlue = styled(TextGraySemiBold)`
 export const TextRed = styled(TextGraySemiBold)`
     color: #C81D25;
 `
+export const TextRed2 = styled(TextRed)`
+    color: #C81D25;
+    padding-right: 20px;
+    padding-top: 10px;
+`
 export const UserName = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
     font-size: 16px;
@@ -44,6 +61,14 @@ export const Subtitle = styled.Text`
     text-align: center;
     width: 80%;
     
+`
+export const TextFoto = styled.Text`
+    font-family: 'MontserratAlternates_500Medium';
+    font-size: 14px;
+    color: #33303E;
+    text-align: center;
+    /* width: 80%; */
+    color: #4E4B59;
 `
 
 export const SubtitleBlue = styled(Subtitle)`

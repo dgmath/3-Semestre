@@ -11,7 +11,11 @@ export const BoxInput = ({
     fieldValue = null,
     onChangeText,
     keyboardType = 'default',
-    maxLength
+    maxLength,
+    customP,
+    multiline,
+    numberOfLines
+
 
 }) => {
     return(
@@ -24,6 +28,8 @@ export const BoxInput = ({
             /> 
 
             <Input
+            numberOfLines={numberOfLines}
+            multiline={multiline}
             placeholder={placeholder}
             editable={editable}
             keyboardType={keyboardType}
@@ -31,6 +37,7 @@ export const BoxInput = ({
             fieldValue={fieldValue}
             onChangeText={onChangeText}
             customHeight={customHeight}
+            customP={customP}
             />
 
         </FieldContent>

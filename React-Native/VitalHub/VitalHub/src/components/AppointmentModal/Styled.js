@@ -14,6 +14,9 @@ export const ModalContentText = styled.View`
     width: 90%;
     justify-content: center;
 `
+export const ModalConsultContentText = styled(ModalContentText)`
+    flex-direction: column;
+`
 
 export const ModalAppointmentContent = styled.View`
     padding: 30px 30px 10px;
@@ -21,6 +24,14 @@ export const ModalAppointmentContent = styled.View`
     border-radius: 10px;
     background-color: white;
     align-items: center;
+`
+export const ModalAppointmentContentConsult = styled.View`
+    padding: 30px 30px 10px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: white;
+    align-items: center;
+    gap: 20px;
 `
 
 export const ModalEmail = styled.Text`
@@ -39,10 +50,18 @@ export const ButtonModalAppointment = styled(Button)`
     width: 80%;
     margin-top: 30px;
 `
+export const ButtonModalAppointmentClinic = styled(ButtonModalAppointment)`
+    width: 90%;
+`
 export const ButtonAppointmentSecondary = styled(Button)`
     background-color: transparent;
     border: none;
     margin-top: 30px;
+`
+export const ButtonAppointment = styled(ButtonAppointmentSecondary)`
+    background-color: transparent;
+    border: none;
+    margin-top: 0px;
 `
 
 export const ButtonSecondaryText = styled.Text`
@@ -53,6 +72,11 @@ export const ButtonSecondaryText = styled.Text`
     text-decoration-color: #496BBA;
     align-self: center;
     /* margin-top: 16px; */
+`
+export const TextModalCalendar = styled.Text`
+    color: #4E4B59;
+    font-family: 'QuickSand_500Medium';
+    font-size: 14px;
 `
 
 export const ImageModal = styled.Image`

@@ -63,10 +63,22 @@ export const TimeBox = styled.View`
 `
 
 
-export const ContainerLabel = styled.SafeAreaView`
-width: 80%;
+export const ContainerLabel = styled.View`
+    width: 80%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+`
+export const ContainerFoto = styled.View`
+    width: 80%;
+    height: 111px;
+    background-color: #F5F3F3;
+    border-radius: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
 `
 export const ContainerShadow = styled.SafeAreaView`
     background-color: #FBFBFB;
@@ -155,4 +167,19 @@ export const ClinicContent = styled.View`
     justify-content: center;
     width: 100%;
     
+`
+export const InputContent = styled.View`
+    width: 80%;
+    
+`
+export const ShadowContent = styled.View`
+    flex-direction: row;
+    padding-left: 80px;
+    padding-right: 80px;
+`
+export const Separator = styled.View`
+    width: 80%;
+    height: 2px;
+    margin-top: 20px;
+    background-color: #8C8A97;
 `

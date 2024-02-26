@@ -17,6 +17,9 @@ import { MedicosConsulta } from './src/screens/MedicosConsulta/MedicosConsulta';
 import { PacienteConsulta } from './src/screens/PacienteConsulta/PacienteConsulta';
 import { Clinica } from './src/screens/Clinica/Clinica';
 import { SelecionarMedico } from './src/screens/SelecionarMedico/SelecionarMedico';
+import { CalendarioPaciente } from './src/screens/CalendarioPaciente/CalendarioPaciente';
+import { Mapa } from './src/screens/Mapa/Mapa';
+import { Prescricao } from './src/screens/Prescricao/Prescricao';
 
 
 const Stack = createNativeStackNavigator()
@@ -110,6 +113,21 @@ export default function App() {
               name='Medico'
               component={SelecionarMedico}
               options={{ title: "Médico" }}
+            />
+            <Stack.Screen
+              name='Calendario'
+              component={CalendarioPaciente}
+              options={{ title: "Calendário" }}
+            />
+            <Stack.Screen
+              name='Mapa'
+              component={Mapa}
+              options={{ title: "Mapa" }}
+            />
+            <Stack.Screen
+              name='Prescricao'
+              component={Prescricao}
+              options={{ title: "Prescrição" }}
             />
           </Stack.Navigator>
         </NavigationContainer>

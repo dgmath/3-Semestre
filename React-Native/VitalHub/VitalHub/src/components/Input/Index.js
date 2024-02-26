@@ -7,10 +7,15 @@ export const Input = ({
     fieldValue,
     onChangeText,
     keyboardType,
-    maxLength
+    maxLength,
+    customP,
+    numberOfLines,
+    multiline
 }) => {
-    return(
+    return (
         <InputPerfil
+            numberOfLines={numberOfLines}
+            multiline={multiline}
             placeholder={placeholder}
             editable={editable}
             keyboardType={keyboardType}
@@ -18,12 +23,13 @@ export const Input = ({
             value={fieldValue}
             onChangeText={onChangeText}
             customHeight={customHeight}
+            customP={customP}
         />
 
-        
+
     )
 }
-export const InputP= ({
+export const InputP = ({
     customHeight = 53,
     placeholder,
     editable,
@@ -35,7 +41,7 @@ export const InputP= ({
     customWidth
 
 }) => {
-    return(
+    return (
         <InputProntuario
             placeholder={placeholder}
             editable={editable}
@@ -48,6 +54,6 @@ export const InputP= ({
             customP={customP}
         />
 
-        
+
     )
 }

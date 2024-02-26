@@ -52,6 +52,20 @@ export const ButtonGoogleTitle = styled(ButtonTitle)`
 export const BtnMedical = styled.TouchableOpacity`
     
 `
+export const ButtonCamera = styled.TouchableOpacity`
+    height: 44px;
+    background-color: #49B3BA;
+    align-items: center;
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 10px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+`
+export const TextButtonCamera = styled(ButtonTitle)`
+    color: #FFFFFF;
+`
 
 
 

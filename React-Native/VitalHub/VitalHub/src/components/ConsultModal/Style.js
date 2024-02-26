@@ -36,6 +36,16 @@ export const ModalSubtitle = styled.Text`
     padding-left: 20px;
     font-family: Quicksand_600SemiBold;
 `
+export const ModalSubtitle2 = styled.Text`
+    font-size: 14px;
+    color: #000000;
+    /* line-height: 22px; */
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* padding-left: 20px; */
+    font-family: Quicksand_600SemiBold;
+`
 
 export const ButtonModal = styled(Button)`
     width: 90%;

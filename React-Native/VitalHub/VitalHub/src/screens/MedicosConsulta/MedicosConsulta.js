@@ -75,6 +75,7 @@ export const MedicosConsulta = () => {
                             time={'14:00'}
                             situacao={item.situacao}
                             onPressCancel={() => setShowModalCancel(true)}
+                            onPressAppointment={() => setShowModalAppointment(true)}
                             />)}
                         />
 
@@ -87,7 +88,7 @@ export const MedicosConsulta = () => {
 
             {/* Modal Prontuário */}
 
-            <AppointmentModalPaciente
+            <AppointmentModal
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
             />

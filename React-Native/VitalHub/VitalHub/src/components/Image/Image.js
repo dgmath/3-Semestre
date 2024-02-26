@@ -7,6 +7,13 @@ export const ImagePerfil = styled.ImageBackground`
     margin-bottom: 80px;
     /* justify-content: flex-end; */
 `
+export const ImagePerfil2 = styled.ImageBackground`
+    width: 100%;
+    height: 350px;
+    align-items: center;
+    margin-bottom: 30px;
+    /* justify-content: flex-end; */
+`
 
 export const ImageHeader = styled.Image`
     width: 60px;
