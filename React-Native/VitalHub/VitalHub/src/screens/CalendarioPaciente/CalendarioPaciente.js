@@ -15,7 +15,9 @@ export const CalendarioPaciente = () => {
         <ClinicContent>
             <TitleBlackDoctor>Selecionar data</TitleBlackDoctor>
 
-            <CalendarComponent/>
+            <CalendarComponent
+                
+            />
             <InputContent>
             <ModalSubtitle2>Selecione um horário disponível</ModalSubtitle2>
             <InputSelect/>
