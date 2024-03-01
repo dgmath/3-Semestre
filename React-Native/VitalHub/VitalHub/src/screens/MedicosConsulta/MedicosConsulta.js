@@ -92,8 +92,6 @@ export const MedicosConsulta = () => {
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
             />
-
-                <Footer/>
             </ContainerConsulta>
     )
 }

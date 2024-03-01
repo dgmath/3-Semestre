@@ -191,3 +191,8 @@ export const Separator = styled.View`
     margin-top: 20px;
     background-color: #8C8A97;
 `
+export const ContentIcon = styled.View`
+    align-items: center;
+    padding-top: 20px;
+    `
+
