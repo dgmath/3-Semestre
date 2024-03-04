@@ -19,7 +19,7 @@ const Consultas = [
     {id: 6, nome: 'Carlos', situacao: "pendente"},
 ]
 
-export const MedicosConsulta = () => {
+export const MedicosConsulta = ({navigation}) => {
     //state para o estado da lista cards
     const [statusLista, setStatusLista] = useState("pendente")
 

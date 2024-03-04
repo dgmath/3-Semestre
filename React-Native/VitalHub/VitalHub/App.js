@@ -58,7 +58,77 @@ function App() {
     //options(title): título da tela
 
     <NavigationContainer>
-      <Stack.Navigator>
+      {/* <Stack.Screen
+        name='Navegacao'
+        component={Navegacao}
+        options={{ title: "Navegação" }}
+      /> */}
+
+      <Stack.Navigator
+        initialRouteName='Login'
+      >
+
+        <Stack.Screen
+          name='EsqueceuSenha'
+          component={EsqueceuSenha}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='VerifiqueEmail'
+          component={VerifiqueEmail}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='NovaSenha'
+          component={NovaSenha}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Cadastro'
+          component={Cadastro}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Perfil'
+          component={Perfil}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Prontuario'
+          component={Prontuario}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='HomePaciente'
+          component={PacienteConsulta}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Clinica'
+          component={Clinica}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='SelecionarMedico'
+          component={SelecionarMedico}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='SelecionarData'
+          component={CalendarioPaciente}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Mapa'
+          component={Mapa}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Prescricao'
+          component={Prescricao}
+          options={{ headerShown: false }}
+        />
+
         <Stack.Screen
           name='Login'
           component={Login}

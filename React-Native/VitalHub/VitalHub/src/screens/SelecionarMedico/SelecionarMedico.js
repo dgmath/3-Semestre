@@ -8,7 +8,7 @@ import { ClinicContent, ContainerClinica } from "../../components/Container/Styl
 
 
 
-export const SelecionarMedico = () => {
+export const SelecionarMedico = ({navigation}) => {
 
     const Doctor = [
         {id: 1, 
@@ -56,11 +56,11 @@ export const SelecionarMedico = () => {
                 )}
             />
             {/* Botão */}
-            <ButtonModal>
+            <ButtonModal onPress={() => navigation.navigate('SelecionarData')}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </ButtonModal>
 
-            <ButtonSecondary>
+            <ButtonSecondary onPress={() => navigation.navigate('Clinica')}>
                 <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
             </ButtonSecondary>
         </ClinicContent>

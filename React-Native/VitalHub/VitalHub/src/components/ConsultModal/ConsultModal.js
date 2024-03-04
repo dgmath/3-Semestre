@@ -1,12 +1,13 @@
 import { Modal } from "react-native"
 import {  ButtonTitle } from "../Button/Style"
-import { ButtonModal, ButtonSecondary, ButtonSecondaryText, ModalContent, ModalSubtitle, PatientModal, TitleBlackBold } from "./Style"
+import { ButtonModal, ButtonModalConfirmar, ButtonSecondary, ButtonSecondaryText, ModalContent, ModalSubtitle, PatientModal, TitleBlackBold } from "./Style"
 import { ContainerButton } from "../Container/Style"
 import { InputP } from "../Input/Index"
 import { ButtonAgendar } from "../ButtonCadastro/ButtonCadastro"
 
 
 export const ConsultModal = ({
+    navigation,
     visible,
     setShowModalConsult,
     clickButton,
@@ -58,9 +59,9 @@ export const ConsultModal = ({
                     />
 
                      {/* Botão */}
-                    <ButtonModal>
+                    <ButtonModalConfirmar onPress={() => navigation.navigate('Clinica') || setShowModalConsult(false)}>
                         <ButtonTitle>Confirmar</ButtonTitle>
-                    </ButtonModal>
+                    </ButtonModalConfirmar>
 
                     <ButtonSecondary onPress={() => setShowModalConsult(false)}>
                         <ButtonSecondaryText>Cancelar</ButtonSecondaryText>

@@ -51,6 +51,7 @@ export const AppointmentModal = ({
     )
 }
 export const AppointmentModalPaciente = ({
+    navigation,
     visible,
     setShowModalAppointment,
     ...rest
@@ -82,7 +83,7 @@ export const AppointmentModalPaciente = ({
                     </ModalContentText>
 
                      {/* Botão */}
-                    <ButtonModalAppointment>
+                    <ButtonModalAppointment onPress={() => navigation.navigate('Mapa') || setShowModalAppointment(false)}>
                         <ButtonTitle>Ver local da consulta</ButtonTitle>
                     </ButtonModalAppointment>
 
@@ -91,65 +92,6 @@ export const AppointmentModalPaciente = ({
                     </ButtonAppointmentSecondary> 
 
                 </ModalAppointmentContent>
-            </PatientModalAppointment>
-        </Modal>
-    )
-}
-export const AppointmentModalConsulta = ({
-    visible,
-    setShowModalAppointment,
-    ...rest
-    // rest todas as outras propriedades do modal de um determinado componente nativo assim como o modal estamos usando todas as suas propriedades
-}) => {
-    return(
-        <Modal 
-            {...rest} 
-            visible={visible} 
-            transparent={true}
-            animationType="fade"
-        >
-            {/* Container */}
-            <PatientModalAppointment>
-                {/* Content */}
-                <ModalAppointmentContentConsult>
-
-                    {/* Titulo */}
-                    <TitleBlack>Agendar consulta</TitleBlack>
-
-                    <TextBlack>Consulte os dados selecionados para a sua consulta</TextBlack>
-
-                    {/* Descrição */}
-                    <ModalConsultContentText>
-                        <InputLabel2>Data da consulta</InputLabel2>
-                        <TextModalCalendar>1 de Novembro de 2023</TextModalCalendar>
-                    </ModalConsultContentText>
-
-                    <ModalConsultContentText>
-                        <InputLabel2>Médico(a) da consulta</InputLabel2>
-                        <TextModalCalendar>Dra Alessandra</TextModalCalendar>
-                        <TextModalCalendar>Demartologa, Esteticista</TextModalCalendar>
-                    </ModalConsultContentText>
-
-                    <ModalConsultContentText>
-                        <InputLabel2>Local da consulta</InputLabel2>
-                        <TextModalCalendar>São Paulo, SP</TextModalCalendar>
-                    </ModalConsultContentText>
-
-                    <ModalConsultContentText>
-                        <InputLabel2>Tipo da consulta</InputLabel2>
-                        <TextModalCalendar>Rotina</TextModalCalendar>
-                    </ModalConsultContentText>
-
-                     {/* Botão */}
-                    <ButtonModalAppointmentClinic>
-                        <ButtonTitle>Ver local da consulta</ButtonTitle>
-                    </ButtonModalAppointmentClinic>
-
-                    <ButtonAppointment onPress={() => setShowModalAppointment(false)}>
-                        <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
-                    </ButtonAppointment> 
-
-                </ModalAppointmentContentConsult>
             </PatientModalAppointment>
         </Modal>
     )

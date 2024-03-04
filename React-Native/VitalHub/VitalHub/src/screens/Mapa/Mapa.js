@@ -1,9 +1,10 @@
 import { BoxInput } from "../../components/BoxInput/Index"
+import { ButtonSecondary, ButtonSecondaryText } from "../../components/CancelattionModal/Style"
 import { ContainerLabel, ContainerPerfil } from "../../components/Container/Style"
 import { ImagePerfil, ImagePerfil2 } from "../../components/Image/Image"
 import { TextGray, TitleBlack2 } from "../../components/Title/Style"
 
-export const Mapa = () => {
+export const Mapa = ({navigation}) => {
     return (
        
         <ContainerPerfil>
@@ -43,6 +44,10 @@ export const Mapa = () => {
                 fieldWidth={45}
             />
             </ContainerLabel>
+            
+            <ButtonSecondary onPress={() => navigation.navigate('Main')}>
+                <ButtonSecondaryText>Voltar</ButtonSecondaryText>
+            </ButtonSecondary>
 
         </ContainerPerfil>
         

@@ -196,3 +196,15 @@ export const ContentIcon = styled.View`
     padding-top: 20px;
     `
 
+// tabBarIcon: ({ focused }) => {
+//     if (route.name === "Home") {
+//       return (
+//         <ContentIcon
+//           tabBarActiveBackgroundColor={
+//             focused ? "#ECF2FF" : "transparent"
+//           }
+//         >
+//           <FontAwesome name="calendar" size={18} color="#4E4B59" />
+//           {focused && <TextIcon>Agenda</TextIcon>}
+//         </ContentIcon>
+//       );

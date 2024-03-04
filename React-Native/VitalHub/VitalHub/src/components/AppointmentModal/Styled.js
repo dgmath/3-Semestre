@@ -39,7 +39,7 @@ export const ModalEmail = styled.Text`
     color: #5f5c6b;
     text-align: center;
     margin-top: 10px;
-    font-family: Quicksand_500Medium;
+    font-family: 'Quicksand_500Medium';
 `
 
 export const ModalAge = styled(ModalEmail)`
@@ -75,7 +75,7 @@ export const ButtonSecondaryText = styled.Text`
 `
 export const TextModalCalendar = styled.Text`
     color: #4E4B59;
-    font-family: 'QuickSand_500Medium';
+    font-family: 'Quicksand_500Medium';
     font-size: 14px;
 `
 

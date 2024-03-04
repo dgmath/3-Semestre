@@ -51,6 +51,10 @@ export const ButtonModal = styled(Button)`
     width: 90%;
     margin-top: 77px;
 `
+export const ButtonModalConfirmar = styled(Button)`
+    width: 90%;
+    margin-top: 77px;
+`
 export const ButtonSecondary = styled(Button)`
     background-color: transparent;
     border: none;

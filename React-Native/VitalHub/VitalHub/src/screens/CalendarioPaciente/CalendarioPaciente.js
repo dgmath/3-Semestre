@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { AppointmentModalConsulta } from "../../components/AppointmentModal/AppointmentModal"
 import { ButtonTitle } from "../../components/Button/Style"
 import CalendarComponent from "../../components/CalendarComponent/CalendarComponent"
 import { ButtonModal, ButtonSecondary, ButtonSecondaryText } from "../../components/CancelattionModal/Style"
@@ -7,9 +6,12 @@ import { TitleBlackDoctor } from "../../components/CardMedico/Style"
 import { ModalSubtitle2 } from "../../components/ConsultModal/Style"
 import { ClinicContent, ContainerClinica, InputContent } from "../../components/Container/Style"
 import InputSelect from "../../components/InputSelect/InputSelect"
+import { ModalConsulta } from "../../components/AppointmentModal/ModalConsulta/ModalConsulta"
 
-export const CalendarioPaciente = () => {
+export const CalendarioPaciente = ({navigation}) => {
+
     const [showModalAppointment, setShowModalAppointment] = useState(false)
+
     return(
         <ContainerClinica>
         <ClinicContent>
@@ -29,12 +31,13 @@ export const CalendarioPaciente = () => {
                 <ButtonTitle>Continuar</ButtonTitle>
             </ButtonModal>
 
-            <ButtonSecondary>
+            <ButtonSecondary onPress={() => navigation.navigate('SelecionarMedico')}>
                 <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
             </ButtonSecondary>
         </ClinicContent>
 
-        <AppointmentModalConsulta
+        <ModalConsulta
+                navigation={navigation}
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
         />

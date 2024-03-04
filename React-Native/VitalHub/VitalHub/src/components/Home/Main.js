@@ -8,6 +8,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { BtnFooter, TextBtnFooter } from "../Footer/Style";
 import { useState } from "react";
 import { ContentIcon } from "../Container/Style";
+import { PacienteConsulta } from "../../screens/PacienteConsulta/PacienteConsulta";
 
 
 
@@ -17,28 +18,15 @@ const Main = () => {
   // const [statusFooter, setStatusFooter] = useState("agenda")
   return (
     <Tab.Navigator
-      initialRouteName="Home"
-      screenOptions={{ route }} => ({
-        tabBarIcon: ({ focused }) => {
-          if (route.name === "Home") {
-            return (
-              <ContentIcon
-                tabBarActiveBackgroundColor={
-                  focused ? "#ECF2FF" : "transparent"
-                }
-              >
-                <FontAwesome name="calendar" size={18} color="#4E4B59" />
-                {focused && <TextIcon>Agenda</TextIcon>}
-              </ContentIcon>
-            );
-          })
+      initialRouteName="HomePaciente"
         // tabBarActiveTintColor: '#e91e63',
     >
 
-      <Tab.Screen name='Agenda' component={MedicosConsulta} />
+      <Tab.Screen options={{ headerShown: false }} name='Agenda' component={PacienteConsulta} />
       <Tab.Screen name="Perfil" component={Perfil}
         options={
           {
+            headerShown: false,
             tabBarActiveTintColor: '#607EC5',
             tabBarIcon: ({color}) => (
           <ContentIcon>

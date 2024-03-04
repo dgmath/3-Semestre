@@ -16,7 +16,7 @@ const ConsultasPaciente = [
     {id: 3, nome: 'Richard', situacao: "cancelado"},
 ]
 
-export const PacienteConsulta = () => {
+export const PacienteConsulta = ({navigation}) => {
     const [showModalAppointment, setShowModalAppointment] = useState(false)
 
     const [showModalConsult, setShowModalConsult] = useState(false)
@@ -86,6 +86,7 @@ export const PacienteConsulta = () => {
             </MedicalContent>
 
             <ConsultModal
+                navigation={navigation}
                 visible={showModalConsult}
                 setShowModalConsult={setShowModalConsult}
                 setStatusModal={setStatusModal}
@@ -93,6 +94,7 @@ export const PacienteConsulta = () => {
             />
             
             <AppointmentModalPaciente
+                navigation={navigation}
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
             />
