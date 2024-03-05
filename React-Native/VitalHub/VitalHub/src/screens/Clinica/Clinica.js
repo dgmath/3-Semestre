@@ -67,11 +67,11 @@ export const Clinica = ({navigation}) => {
                         )}
                 />
                 {/* Botão */}
-                <ButtonModal onPress={() => navigation.navigate('SelecionarMedico')}>
+                <ButtonModal onPress={() => navigation.replace('SelecionarMedico')}>
                     <ButtonTitle>Continuar</ButtonTitle>
                 </ButtonModal>
 
-                <ButtonSecondary onPress={() => navigation.navigate('Main')}>
+                <ButtonSecondary onPress={() => navigation.replace('Main')}>
                     <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
                 </ButtonSecondary>
             </ClinicContent>

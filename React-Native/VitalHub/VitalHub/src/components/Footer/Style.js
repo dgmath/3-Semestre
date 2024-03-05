@@ -17,13 +17,18 @@ export const BoxButton =  styled.View`
 `
 export const TextBtnFooter = styled.Text`
     font-size: 12px;
-    font-family: Quicksand_500Medium;
+    font-family: 'Quicksand_500Medium';
     
     ${props => props.clickButton ?
         css`
     color: #607EC5;`
         : css`
    color: transparent;`}`
+export const TextFooter = styled.Text`
+    font-size: 12px;
+    font-family: 'Quicksand_500Medium';
+    color: #607EC5;`
+
 
 export const BtnFooter =  styled.TouchableOpacity`
 flex-direction: row;

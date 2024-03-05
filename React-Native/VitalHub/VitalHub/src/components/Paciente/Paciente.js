@@ -7,6 +7,7 @@ import { ButtonCancel, ButtonCancel2, ButtonText, TextBold } from "./Style";
 
 
 export const CardPaciente = ({
+    navigation,
     name,
     onPressImage,
     age,
@@ -54,7 +55,7 @@ export const CardPaciente = ({
                             </ButtonCancel>
                             ): (
                                 <TouchableOpacity onPress={onPressAppointment} situacao={situacao}>
-                                <ButtonText situacao={situacao}>Ver prontuário</ButtonText>
+                                <ButtonText onPress={() => navigation.navigate('Prescricao')  } situacao={situacao}>Ver prontuário</ButtonText>
                                 </TouchableOpacity>
                             )
                         }

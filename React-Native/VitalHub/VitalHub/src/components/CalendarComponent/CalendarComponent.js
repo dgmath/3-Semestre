@@ -47,7 +47,7 @@ const CalendarComponent = () => {
         },
       }}
 
-      minDate={startingDate}
+      // minDate={startingDate}
 
       theme={{
         calendarBackground : '#FAFAFA',

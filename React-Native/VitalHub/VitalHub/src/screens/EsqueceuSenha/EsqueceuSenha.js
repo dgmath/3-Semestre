@@ -18,7 +18,7 @@ export const EsqueceuSenha = ({navigation}) => {
          placeholder={'Usuário ou E-mail'}
          />
 
-         <Button>
+         <Button onPress={() => navigation.replace('VerifiqueEmail')}>
             <ButtonTitle>Continuar</ButtonTitle>
          </Button>
 

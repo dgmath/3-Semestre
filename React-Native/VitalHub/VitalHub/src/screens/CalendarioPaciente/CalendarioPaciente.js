@@ -18,7 +18,7 @@ export const CalendarioPaciente = ({navigation}) => {
             <TitleBlackDoctor>Selecionar data</TitleBlackDoctor>
 
             <CalendarComponent
-                
+                // minDate={"5"}
             />
             <InputContent>
             <ModalSubtitle2>Selecione um horário disponível</ModalSubtitle2>

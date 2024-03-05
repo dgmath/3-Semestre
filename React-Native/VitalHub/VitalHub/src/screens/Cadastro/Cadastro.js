@@ -24,11 +24,11 @@ export const Cadastro = ({navigation}) => {
          placeholder={'Confirmar senha'}
          />
 
-         <ButtonCadastro>
+         <ButtonCadastro  onPress={() => navigation.replace('Login')}>
             <ButtonTitle>Continuar</ButtonTitle>
          </ButtonCadastro>
 
-         <LinkCancel onPress={() => navigation.navigate('Login')}>Cancelar</LinkCancel>
+         <LinkCancel onPress={() => navigation.replace('Login')}>Cancelar</LinkCancel>
         </Container>
     )
 }

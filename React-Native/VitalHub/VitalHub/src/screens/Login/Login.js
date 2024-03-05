@@ -7,11 +7,17 @@ import { Button, ButtonTitle, ButtonGoogle, ButtonGoogleTitle } from "../../comp
 import { LinkMedium, LinkMediumBlue } from "../../components/LinkMedium/Style"
 import { ContentAccount } from "../../components/ContentAccount/Style"
 import { TextAccount } from "../../components/TextAccount/Style"
-
 import { AntDesign } from '@expo/vector-icons';
 
-export const Login = ({navigation}) => {
-    return(
+
+export const Login = ({ navigation }) => {
+
+    async function Login() {
+        
+        navigation.replace('Main') 
+    
+    }
+    return (
         <Container>
 
             <Logo
@@ -19,31 +25,35 @@ export const Login = ({navigation}) => {
             />
 
             <Title>Entrar ou criar conta</Title>
-            
+
             <Input
                 placeholder={'Usuário ou E-mail'}
+                // value={email}
+                // onChangeText={(txt) => setEmail(txt)}
             />
 
             <Input
                 placeholder={'Senha'}
+                // value={senha}
+                // onChangeText={(txt) => setSenha(txt)}
             />
 
-            <LinkMedium onPress={() => navigation.navigate('Perfil')}>Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() => navigation.replace('EsqueceuSenha')}>Esqueceu sua senha?</LinkMedium>
 
-            <Button onPress={() => navigation.navigate('Main')}>
+            <Button onPress={(e) => Login()}>
                 <ButtonTitle>entrar</ButtonTitle>
             </Button>
 
             <ButtonGoogle>
                 <AntDesign
-                name="google"   
-                size={20} color='#496BBA'
+                    name="google"
+                    size={20} color='#496BBA'
                 />
                 <ButtonGoogleTitle>entrar com Google</ButtonGoogleTitle>
             </ButtonGoogle>
-            
+
             <ContentAccount>
-                <TextAccount>Não tem conta? <LinkMediumBlue onPress={() => navigation.navigate('Cadastro')}>Crie uma conta agora!</LinkMediumBlue></TextAccount>
+                <TextAccount>Não tem conta? <LinkMediumBlue onPress={() => navigation.replace('Cadastro')}>Crie uma conta agora!</LinkMediumBlue></TextAccount>
             </ContentAccount>
 
         </Container>

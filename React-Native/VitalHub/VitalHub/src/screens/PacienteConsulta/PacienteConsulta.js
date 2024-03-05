@@ -66,6 +66,7 @@ export const PacienteConsulta = ({navigation}) => {
             renderItem={({item}) => 
                 statusListaPaciente == item.situacao && (
                     <CardPaciente
+                    navigation={navigation}
                     onPressImage={() => setShowModalAppointment(true)}
                     source={require('../../../src/assets/img/ImageDoctor.png')}
                     name={'Dr. Claudio'}

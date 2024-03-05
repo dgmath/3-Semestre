@@ -56,7 +56,7 @@ export const SelecionarMedico = ({navigation}) => {
                 )}
             />
             {/* Botão */}
-            <ButtonModal onPress={() => navigation.navigate('SelecionarData')}>
+            <ButtonModal onPress={() => navigation.replace('SelecionarData')}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </ButtonModal>
 

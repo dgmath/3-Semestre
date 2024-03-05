@@ -51,8 +51,8 @@ export const ModalConsulta = ({
                     </ModalConsultContentText>
 
                      {/* Botão */}
-                    <ButtonModalAppointmentClinic onPress={() => navigation.navigate('Mapa') || setShowModalAppointment(false)}>
-                        <ButtonTitle>Ver local da consulta</ButtonTitle>
+                    <ButtonModalAppointmentClinic onPress={() => navigation.navigate('Main') || setShowModalAppointment(false)}>
+                        <ButtonTitle>Confirmar</ButtonTitle>
                     </ButtonModalAppointmentClinic>
 
                     <ButtonAppointment onPress={() => setShowModalAppointment(false)}>
