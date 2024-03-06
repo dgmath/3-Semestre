@@ -6,7 +6,7 @@ import { LinkMediumBlue } from '../../components/LinkMedium/Style'
 import { ScrollForm } from '../../components/ScrollForm/Style'
 import { Subtitle, TitleBlack } from '../../components/Title/Style'
 
-export const Prontuario = () => {
+export const Prontuario = ({navigation}) => {
     return(
         <ScrollForm>
         <ContainerPerfil>
@@ -58,7 +58,7 @@ export const Prontuario = () => {
                 <ButtonTitle>EDITAR</ButtonTitle>
             </ButtonGrayP>
 
-            <LinkMediumBlue>Cancelar</LinkMediumBlue>
+            <LinkMediumBlue onPress={() => navigation.navigate('Main')}>Cancelar</LinkMediumBlue>
         </ContainerPerfil>
         </ScrollForm> 
     )

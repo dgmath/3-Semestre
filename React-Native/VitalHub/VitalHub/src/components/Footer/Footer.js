@@ -13,7 +13,7 @@ export const Footer = ({
             <BoxButton>
 
                 <BtnFooter clickButton={statusFooter === "agenda"} onPress={() => setStatusFooter("agenda")}>
-                    <FontAwesome6 name="calendar-check" size={18} color={statusFooter === "agenda" ? color='#607EC5'  : color='#4E4B59'}/>
+                    <FontAwesome6 name="calendar-check" size={18} color={'#4E4B59'}/>
                     <TextBtnFooter clickButton={statusFooter === "agenda"} >Agenda</TextBtnFooter>
                 </BtnFooter>
 

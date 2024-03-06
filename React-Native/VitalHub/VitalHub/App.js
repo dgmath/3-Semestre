@@ -104,6 +104,11 @@ function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name='Home'
+          component={MedicosConsulta}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name='Clinica'
           component={Clinica}
           options={{ headerShown: false }}

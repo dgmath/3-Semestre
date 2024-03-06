@@ -3,14 +3,14 @@ import { ImageHeader } from '../Image/Image'
 import { TextGray, UserName } from '../Title/Style'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export const Header = () => {
+export const Header = ({navigation}) => {
     return(
         <ContainerHeader>
             <BoxUser>
                 <ImageHeader
                     source={require('../../../src/assets/img/PerfilUser.png')}
                     />
-                <DataUser>
+                <DataUser onPress={() => navigation.navigate('Perfil')}>
                     <TextGray>Bem vindo</TextGray>
                     <UserName>Dr. Claudio</UserName>
                 </DataUser>

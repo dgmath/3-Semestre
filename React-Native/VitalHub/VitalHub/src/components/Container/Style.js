@@ -32,7 +32,10 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     border-bottom-right-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 `
-export const DataUser = styled.View`
+export const DataUser = styled.TouchableOpacity`
+    gap: 10px;
+`
+export const DataUser2 = styled.View`
     gap: 10px;
 `
 export const BoxUser = styled.SafeAreaView`
@@ -90,7 +93,7 @@ export const ContainerShadow = styled.SafeAreaView`
     align-items: center;
     justify-content: center;
 `
-export const ContainerShadowConsultas = styled.TouchableOpacity`
+export const ContainerShadowConsultas = styled.View`
     background-color: #FBFBFB;
     width: 90%;
     height: 110px;

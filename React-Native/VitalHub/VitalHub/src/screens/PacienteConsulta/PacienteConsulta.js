@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ButtonCadastro } from "../../components/ButtonCadastro/ButtonCadastro"
-import  CalendarList from "../../components/Calendar/Index"
+import CalendarList from "../../components/Calendar/Index"
 import { ContainerButton, ContainerConsulta, MedicalContent } from "../../components/Container/Style"
 import { HeaderPaciente } from "../../components/HeaderPaciente/HeaderPaciente"
 import { ListComponent } from "../../components/List/List"
@@ -9,15 +9,17 @@ import { FontAwesome6 } from '@expo/vector-icons';
 import { BtnMedical } from "../../components/Button/Style"
 import { ConsultModal } from "../../components/ConsultModal/ConsultModal"
 import { AppointmentModalPaciente } from "../../components/AppointmentModal/AppointmentModal"
+import { CancelattionModal } from "../../components/CancelattionModal/CancelattionModal"
 
 const ConsultasPaciente = [
-    {id: 1, nome: 'Richard', situacao: "pendente"},
-    {id: 2, nome: 'Richard', situacao: "realizado"},
-    {id: 3, nome: 'Richard', situacao: "cancelado"},
+    { id: 1, nome: 'Richard', situacao: "pendente" },
+    { id: 2, nome: 'Richard', situacao: "realizado" },
+    { id: 3, nome: 'Richard', situacao: "cancelado" },
 ]
 
-export const PacienteConsulta = ({navigation}) => {
+export const PacienteConsulta = ({ navigation }) => {
     const [showModalAppointment, setShowModalAppointment] = useState(false)
+    const [showModalCancel, setShowModalCancel] = useState(false)
 
     const [showModalConsult, setShowModalConsult] = useState(false)
 
@@ -25,32 +27,34 @@ export const PacienteConsulta = ({navigation}) => {
 
     const [statusModal, setStatusModal] = useState("")
 
-    
 
-    return(
+
+    return (
         <ContainerConsulta>
             {/* Header */}
-            <HeaderPaciente/>
+            <HeaderPaciente
+                navigation={navigation}
+            />
 
             {/* Calendário */}
-            <CalendarList/>
+            <CalendarList />
 
             {/* Botões */}
             <ContainerButton>
                 <ButtonCadastro
                     textButton={"Agendadas"}
-                    clickButton= {statusListaPaciente === "pendente"}
+                    clickButton={statusListaPaciente === "pendente"}
                     onPress={() => setStatusListaPaciente("pendente")}
                 />
                 <ButtonCadastro
                     textButton={"Realizadas"}
-                    clickButton= {statusListaPaciente === "realizado"}
+                    clickButton={statusListaPaciente === "realizado"}
                     onPress={() => setStatusListaPaciente("realizado")}
 
                 />
                 <ButtonCadastro
                     textButton={"Canceladas"}
-                    clickButton= {statusListaPaciente === "cancelado"}
+                    clickButton={statusListaPaciente === "cancelado"}
                     onPress={() => setStatusListaPaciente("cancelado")}
 
                 />
@@ -58,31 +62,31 @@ export const PacienteConsulta = ({navigation}) => {
 
             {/* FlatList */}
             <ListComponent
-            //nome da constante com dados
-            data={ConsultasPaciente}
-            //ldefinindo quem sera a key do seu item na constante
-            keyExtractor={(item) => item.id}
-            //O que vai ser mostrado
-            renderItem={({item}) => 
-                statusListaPaciente == item.situacao && (
-                    <CardPaciente
-                    navigation={navigation}
-                    onPressImage={() => setShowModalAppointment(true)}
-                    source={require('../../../src/assets/img/ImageDoctor.png')}
-                    name={'Dr. Claudio'}
-                    age={'30 anos'}
-                    type={'Rotina'}
-                    time={'14:00'}
-                    situacao={item.situacao}
-                    // onPressCancel={() => setShowModalCancel(true)}
-                    // onPressAppointment={() => setShowModalAppointment(true)}
-                    />
-                )}
+                //nome da constante com dados
+                data={ConsultasPaciente}
+                //ldefinindo quem sera a key do seu item na constante
+                keyExtractor={(item) => item.id}
+                //O que vai ser mostrado
+                renderItem={({ item }) =>
+                    statusListaPaciente == item.situacao && (
+                        <CardPaciente
+                            navigation={navigation}
+                            onPressImage={() => setShowModalAppointment(true)}
+                            source={require('../../../src/assets/img/ImageDoctor.png')}
+                            name={'Dr. Claudio'}
+                            age={'30 anos'}
+                            type={'Rotina'}
+                            time={'14:00'}
+                            situacao={item.situacao}
+                            onPressCancel={() => setShowModalCancel(true)}
+                        // onPressAppointment={() => setShowModalAppointment(true)}
+                        />
+                    )}
             />
 
             <MedicalContent>
                 <BtnMedical onPress={() => setShowModalConsult(true)}>
-                    <FontAwesome6 name="stethoscope" size={28} color="#FBFBFB" /> 
+                    <FontAwesome6 name="stethoscope" size={28} color="#FBFBFB" />
                 </BtnMedical>
             </MedicalContent>
 
@@ -93,11 +97,16 @@ export const PacienteConsulta = ({navigation}) => {
                 setStatusModal={setStatusModal}
                 statusModal={statusModal}
             />
-            
+
             <AppointmentModalPaciente
                 navigation={navigation}
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
+            />
+
+            <CancelattionModal
+                visible={showModalCancel}
+                setShowModalCancel={setShowModalCancel}
             />
         </ContainerConsulta>
     )

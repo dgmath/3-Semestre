@@ -4,10 +4,13 @@ import { InputCode } from "../../components/Input/Style"
 import { LinkCancel, LinkCode, LinkMedium } from "../../components/LinkMedium/Style"
 import { Logo } from "../../components/Logo/Style"
 import { Subtitle, SubtitleBlue, Title } from "../../components/Title/Style"
+import { AntDesign } from '@expo/vector-icons';
 
 export const VerifiqueEmail = ({navigation}) => {
     return(
         <Container>
+        <AntDesign onPress={() => navigation.navigate('EsqueceuSenha')} style={{alignSelf: "flex-start", paddingTop: 30, paddingLeft: 20}} name="close" size={24} color="#FFFFFF" />
+
             <Logo
                 source={require('../../../src/assets/img/VitalHub_Logo.png')}
             />

@@ -6,6 +6,7 @@ import { ButtonSecondaryText } from "../CancelattionModal/Style"
 import { InputLabel, InputLabel2 } from "../Label/Style"
 
 export const AppointmentModal = ({
+    navigation,
     visible,
     setShowModalAppointment,
     ...rest
@@ -37,7 +38,7 @@ export const AppointmentModal = ({
                     </ModalContentText>
 
                      {/* Botão */}
-                    <ButtonModalAppointment>
+                    <ButtonModalAppointment onPress={() => navigation.navigate('Prontuario') || setShowModalAppointment(false)}>
                         <ButtonTitle>Inserir Prontuário</ButtonTitle>
                     </ButtonModalAppointment>
 

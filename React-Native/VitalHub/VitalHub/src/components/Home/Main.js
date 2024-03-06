@@ -9,6 +9,7 @@ import { BtnFooter, TextBtnFooter, TextFooter } from "../Footer/Style";
 import { useState } from "react";
 import { PacienteConsulta } from "../../screens/PacienteConsulta/PacienteConsulta";
 import { ContentIcon } from "./Style";
+import { PerfilMedico } from "../../screens/Perfil/PerfilMedico";
 
 
 
@@ -18,6 +19,7 @@ const Main = () => {
   // const [statusFooter, setStatusFooter] = useState("agenda")
   return (
     <Tab.Navigator
+      // initialRouteName="Home"
       initialRouteName="HomePaciente"
       screenOptions={({ route }) => ({
         tabBarStyle: { height: 80, paddingTop: 10, backgroundColor: '#FFFFFF' },
@@ -53,9 +55,11 @@ const Main = () => {
       })}
     // tabBarActiveTintColor: '#e91e63',
     >
-      <Tab.Screen name='HomePaciente' component={PacienteConsulta} />
+      <Tab.Screen name='HomePaciente' component={MedicosConsulta} />
+      {/* <Tab.Screen name='Home' component={MedicosConsulta} /> */}
 
       <Tab.Screen name="Perfil" component={Perfil} />
+      {/* <Tab.Screen name="Perfil" component={PerfilMedico} /> */}
     </Tab.Navigator >
   )
 }

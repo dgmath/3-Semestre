@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native";
-import { BoxCard, BoxCircle, CancelBox, Circle, ContainerShadowConsultas, DataUser, TextBox, TimeBox } from "../Container/Style"
+import { BoxCard, BoxCircle, CancelBox, Circle, ContainerShadowConsultas, DataUser2, TextBox, TimeBox } from "../Container/Style"
 import { ImageCard } from "../Image/Image";
 import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from "../Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -28,7 +28,7 @@ export const CardPaciente = ({
                     source={source}
                 />
                 </ButtonCancel2>
-                <DataUser>
+                <DataUser2>
                     <TextBox>
                         <TitleBlack>{name}</TitleBlack>
 
@@ -55,12 +55,12 @@ export const CardPaciente = ({
                             </ButtonCancel>
                             ): (
                                 <TouchableOpacity onPress={onPressAppointment} situacao={situacao}>
-                                <ButtonText onPress={() => navigation.navigate('Prescricao')  } situacao={situacao}>Ver prontuário</ButtonText>
+                                <ButtonText  situacao={situacao}>Ver prontuário</ButtonText>
                                 </TouchableOpacity>
                             )
                         }
                     </CancelBox>
-                </DataUser>
+                </DataUser2>
             </BoxCard>
         </ContainerShadowConsultas>
     )

@@ -1,5 +1,5 @@
 
-import { BoxCard, ContainerShadowConsultas, DataUser, TextBox} from "../Container/Style"
+import { BoxCard, ContainerShadowConsultas, DataUser, DataUser2, TextBox} from "../Container/Style"
 import { ImageCard } from "../Image/Image";
 import {  TextGraySemiBold, TitleBlack } from "../Title/Style"
 
@@ -20,12 +20,12 @@ export const CardMedico = ({
                 //require('../../../src/assets/img/ImageCard.png')
                     source={source}
                 />
-                <DataUser>
+                <DataUser2>
                     <TextBox>
                             <TitleBlack>{name}</TitleBlack>
                             <TextGraySemiBold>{type}</TextGraySemiBold>
                     </TextBox>
-                </DataUser>
+                </DataUser2>
             </BoxCard>
         </ContainerShadowConsultas>
     )

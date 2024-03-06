@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const btnCancel = styled.TouchableOpacity`
+`
+
 export const LinkMedium = styled.Text`
     color: white;
     font-family: 'MontserratAlternates_600SemiBold';
