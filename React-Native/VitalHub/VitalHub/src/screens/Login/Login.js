@@ -8,15 +8,28 @@ import { LinkMedium, LinkMediumBlue } from "../../components/LinkMedium/Style"
 import { ContentAccount } from "../../components/ContentAccount/Style"
 import { TextAccount } from "../../components/TextAccount/Style"
 import { AntDesign } from '@expo/vector-icons';
+// import { useState } from "react"
 
+// import axios from "axios"
 
 export const Login = ({ navigation }) => {
 
     async function Login() {
-        
-        navigation.replace('Main') 
+ 
+                navigation.replace('Main') 
+            
+       
+        // else email === 'Doutor' && senha === '1234'
+        // {
+        //     return(
+        //         navigation.replace('MainM')
+        //     )
+        // }
     
     }
+
+    // const [email, setEmail] = useState('')
+    // const [senha, setSenha] = useState('')
     return (
         <Container>
 
@@ -36,6 +49,7 @@ export const Login = ({ navigation }) => {
                 placeholder={'Senha'}
                 // value={senha}
                 // onChangeText={(txt) => setSenha(txt)}
+                keyBoardType={'password'}
             />
 
             <LinkMedium onPress={() => navigation.replace('EsqueceuSenha')}>Esqueceu sua senha?</LinkMedium>

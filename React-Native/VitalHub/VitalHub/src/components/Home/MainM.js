@@ -1,4 +1,4 @@
-import { Home, MedicosConsulta } from "../../screens/Home/Home";
+import { MedicosConsulta } from "../../screens/Home/Home";
 import { Perfil } from "../../screens/Perfil/Perfil";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome6 } from '@expo/vector-icons';
@@ -15,11 +15,10 @@ import { PerfilMedico } from "../../screens/Perfil/PerfilMedico";
 
 const Tab = createBottomTabNavigator();
 
-const Main = () => {
+const MainM = () => {
   // const [statusFooter, setStatusFooter] = useState("agenda")
   return (
     <Tab.Navigator
-      // initialRouteName="Home"
       initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarStyle: { height: 80, paddingTop: 10, backgroundColor: '#FFFFFF' },
@@ -56,13 +55,11 @@ const Main = () => {
       })}
     // tabBarActiveTintColor: '#e91e63',
     >
-      <Tab.Screen name='Home' component={Home} />
-      {/* <Tab.Screen name='Home' component={MedicosConsulta} /> */}
+      <Tab.Screen name='Home' component={MedicosConsulta} />
 
-      <Tab.Screen name="Perfil" component={Perfil} />
-      {/* <Tab.Screen name="Perfil" component={PerfilMedico} /> */}
+      <Tab.Screen name="Perfil" component={PerfilMedico} />
     </Tab.Navigator >
   )
 }
 
-export default Main
+export default MainM

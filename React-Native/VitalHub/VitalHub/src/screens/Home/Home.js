@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CalendarList from "../../components/Calendar/Index";
-import { ContainerButton, ContainerConsulta } from "../../components/Container/Style"
+import { ContainerButton, ContainerConsulta, MedicalContent } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header";
 import { ButtonCadastro } from "../../components/ButtonCadastro/ButtonCadastro";
 import { CardPaciente } from "../../components/Paciente/Paciente";
@@ -8,6 +8,10 @@ import { ListComponent } from "../../components/List/List";
 import { Footer } from "../../components/Footer/Footer";
 import { CancelattionModal } from "../../components/CancelattionModal/CancelattionModal";
 import { AppointmentModal, AppointmentModalPaciente } from "../../components/AppointmentModal/AppointmentModal";
+import { BtnMedical } from "../../components/Button/Style";
+import { FontAwesome6 } from '@expo/vector-icons';
+import { ConsultModal } from "../../components/ConsultModal/ConsultModal";
+
 // import { TextGray, UserName } from "../../components/Title/Style"
 
 const Consultas = [
@@ -19,15 +23,18 @@ const Consultas = [
     { id: 6, nome: 'Carlos', situacao: "pendente" },
 ]
 
-export const MedicosConsulta = ({ navigation }) => {
+export const Home = ({ navigation }) => {
     //state para o estado da lista cards
     const [statusLista, setStatusLista] = useState("pendente")
 
     //state par exibição dos modais
 
     const [showModalCancel, setShowModalCancel] = useState(false)
+    const [showModalConsult, setShowModalConsult] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
+    const [statusModal, setStatusModal] = useState("")
 
+    const [profile, setProfile] = useState('Paciente')
     return (
         <ContainerConsulta>
             <Header
@@ -79,7 +86,13 @@ export const MedicosConsulta = ({ navigation }) => {
                             onPressAppointment={() => setShowModalAppointment(true)}
                         />)}
             />
-
+        {profile === "Paciente" && (
+            <MedicalContent>
+                <BtnMedical onPress={() => setShowModalConsult(true)}>
+                    <FontAwesome6 name="stethoscope" size={28} color="#FBFBFB" />
+                </BtnMedical>
+            </MedicalContent>
+        )}
             {/* Modal cancelar */}
 
             <CancelattionModal
@@ -93,6 +106,15 @@ export const MedicosConsulta = ({ navigation }) => {
                 navigation={navigation}
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
+            />
+
+            {/* Modal Paciente */}
+            <ConsultModal
+                navigation={navigation}
+                visible={showModalConsult}
+                setShowModalConsult={setShowModalConsult}
+                setStatusModal={setStatusModal}
+                statusModal={statusModal}
             />
         </ContainerConsulta>
     )

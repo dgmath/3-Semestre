@@ -58,7 +58,7 @@ export const Prontuario = ({navigation}) => {
                 <ButtonTitle>EDITAR</ButtonTitle>
             </ButtonGrayP>
 
-            <LinkMediumBlue onPress={() => navigation.navigate('Main')}>Cancelar</LinkMediumBlue>
+            <LinkMediumBlue onPress={() => navigation.navigate('MainM')}>Cancelar</LinkMediumBlue>
         </ContainerPerfil>
         </ScrollForm> 
     )

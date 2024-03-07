@@ -13,7 +13,7 @@ import { NovaSenha } from './src/screens/NovaSenha/NovaSenha';
 import { Cadastro } from './src/screens/Cadastro/Cadastro';
 import { Perfil } from './src/screens/Perfil/Perfil';
 import { Prontuario } from './src/screens/Prontuario/Prontuario';
-import { MedicosConsulta } from './src/screens/MedicosConsulta/MedicosConsulta';
+import { Home, MedicosConsulta } from './src/screens/Home/Home';
 import { PacienteConsulta } from './src/screens/PacienteConsulta/PacienteConsulta';
 import { Clinica } from './src/screens/Clinica/Clinica';
 import { SelecionarMedico } from './src/screens/SelecionarMedico/SelecionarMedico';
@@ -21,6 +21,7 @@ import { CalendarioPaciente } from './src/screens/CalendarioPaciente/CalendarioP
 import { Mapa } from './src/screens/Mapa/Mapa';
 import { Prescricao } from './src/screens/Prescricao/Prescricao';
 import Main from './src/components/Home/Main';
+import MainM from './src/components/Home/MainM';
 
 
 
@@ -105,7 +106,7 @@ function App() {
         />
         <Stack.Screen
           name='Home'
-          component={MedicosConsulta}
+          component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -143,6 +144,11 @@ function App() {
         <Stack.Screen
           name='Main'
           component={Main}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='MainM'
+          component={MainM}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

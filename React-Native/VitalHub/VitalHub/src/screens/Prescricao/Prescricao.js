@@ -10,7 +10,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCamera, TextButtonCamera } from "../../components/Button/Style"
 //<MaterialCommunityIcons name="camera-plus-outline" size={24} color="black" />
 
-export const Prescricao = () => {
+export const Prescricao = ({navigation}) => {
     return (
        <ScrollForm>
         <ContainerPerfil>
@@ -100,7 +100,7 @@ export const Prescricao = () => {
                 customP={25}
             />
 
-            <ButtonAppointment>
+            <ButtonAppointment onPress={() => navigation.replace('Main')}>
                         <ButtonSecondaryText>Voltar</ButtonSecondaryText>
             </ButtonAppointment> 
         </ContainerPerfil>

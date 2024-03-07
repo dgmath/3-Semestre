@@ -8,7 +8,7 @@ import { ClinicContent, ContainerClinica } from "../../components/Container/Styl
 
 
 
-export const Clinica = ({navigation}) => {
+export const Clinica = ({ navigation, setShowModalConsult}) => {
     const SelecionarClinica = [
         {id: 1, nome: 'Clinica',                     
         name:'Clínica Natureh',
@@ -43,7 +43,7 @@ export const Clinica = ({navigation}) => {
     ]
 
     const [borderColor, setBorderColor] = useState(null)
-
+    // const [showModalConsult, setShowModalConsult] = useState(false)
     return (
         <ContainerClinica>
             <ClinicContent>
@@ -71,7 +71,7 @@ export const Clinica = ({navigation}) => {
                     <ButtonTitle>Continuar</ButtonTitle>
                 </ButtonModal>
 
-                <ButtonSecondary onPress={() => navigation.replace('Main')}>
+                <ButtonSecondary onPress={() => navigation.replace('Main') && setShowModalConsult(true)}>
                     <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
                 </ButtonSecondary>
             </ClinicContent>

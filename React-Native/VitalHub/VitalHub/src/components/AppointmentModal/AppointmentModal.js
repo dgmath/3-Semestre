@@ -12,6 +12,7 @@ export const AppointmentModal = ({
     ...rest
     // rest todas as outras propriedades do modal de um determinado componente nativo assim como o modal estamos usando todas as suas propriedades
 }) => {
+
     return(
         <Modal 
             {...rest} 

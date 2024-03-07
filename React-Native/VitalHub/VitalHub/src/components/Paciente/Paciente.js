@@ -4,6 +4,7 @@ import { ImageCard } from "../Image/Image";
 import { TextBlue, TextGrayRegular, TextGraySemiBold, TextRed, TitleBlack } from "../Title/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCancel, ButtonCancel2, ButtonText, TextBold } from "./Style";
+import { useState } from "react";
 
 
 export const CardPaciente = ({
@@ -19,6 +20,7 @@ export const CardPaciente = ({
     source
 
 }) => {
+    const[profile, setProfile] = useState('Paciente')
     return (
         <ContainerShadowConsultas>
             <BoxCard>
@@ -54,7 +56,7 @@ export const CardPaciente = ({
                             <ButtonText  situacao={situacao}>Cancelar</ButtonText>
                             </ButtonCancel>
                             ): (
-                                <TouchableOpacity onPress={onPressAppointment} situacao={situacao}>
+                                <TouchableOpacity onPress={ profile !== "Paciente" ? onPressAppointment : () => navigation.navigate('Prescricao')} situacao={situacao}>
                                 <ButtonText  situacao={situacao}>Ver prontuário</ButtonText>
                                 </TouchableOpacity>
                             )
