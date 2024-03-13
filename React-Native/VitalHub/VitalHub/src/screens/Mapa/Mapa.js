@@ -2,16 +2,18 @@ import { BoxInput } from "../../components/BoxInput/Index"
 import { ButtonSecondary, ButtonSecondaryText } from "../../components/CancelattionModal/Style"
 import { ContainerLabel, ContainerPerfil } from "../../components/Container/Style"
 import { ImagePerfil, ImagePerfil2 } from "../../components/Image/Image"
+import { MapLocation } from "../../components/MapLocation/MapLocation"
 import { TextGray, TitleBlack2 } from "../../components/Title/Style"
 
 export const Mapa = ({navigation}) => {
     return (
        
         <ContainerPerfil>
-            <ImagePerfil2
+            {/* <ImagePerfil2
                 source={require('../../../src/assets/img/Mapa.png')}
                 resizeMode='cover'
-            />
+            /> */}
+            <MapLocation/>
 
             <TitleBlack2>Clínica Natureh</TitleBlack2>
             <TextGray>São Paulo, SP</TextGray>

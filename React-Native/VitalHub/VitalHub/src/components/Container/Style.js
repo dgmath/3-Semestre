@@ -19,8 +19,8 @@ export const ContainerConsulta = styled.View`
 `
 export const ContainerHeader = styled(LinearGradient).attrs({
     colors: ['#60BFC5', '#496BBA'], // Cores do gradiente
-    start: {x: -0.05, y: 1.08},// Ponto inicial do gradiente
-    end: {x: 1, y: 0} // Ponto final do gradiente
+    start: { x: -0.05, y: 1.08 },// Ponto inicial do gradiente
+    end: { x: 1, y: 0 } // Ponto final do gradiente
 })`
 
     align-items: center;
@@ -193,6 +193,11 @@ export const Separator = styled.View`
     height: 2px;
     margin-top: 20px;
     background-color: #8C8A97;
+`
+
+export const MapLocationContainer = styled.View`
+    width :100%;
+    height: 45%;
 `
 
 

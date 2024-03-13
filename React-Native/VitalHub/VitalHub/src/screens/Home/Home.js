@@ -76,7 +76,8 @@ export const Home = ({ navigation }) => {
 
                         <CardPaciente
                             navigation={navigation}
-                            source={require('../../../src/assets/img/ImageCard.png')}
+                            onPressImage={() => setShowModalAppointment(true)}
+                            source={require('../../../src/assets/img/ImageDoctor.png')}
                             name={'Catarina'}
                             age={'17 anos'}
                             type={'Rotina'}
@@ -86,13 +87,13 @@ export const Home = ({ navigation }) => {
                             onPressAppointment={() => setShowModalAppointment(true)}
                         />)}
             />
-        {profile === "Paciente" && (
-            <MedicalContent>
-                <BtnMedical onPress={() => setShowModalConsult(true)}>
-                    <FontAwesome6 name="stethoscope" size={28} color="#FBFBFB" />
-                </BtnMedical>
-            </MedicalContent>
-        )}
+            {profile === "Paciente" && (
+                <MedicalContent>
+                    <BtnMedical onPress={() => setShowModalConsult(true)}>
+                        <FontAwesome6 name="stethoscope" size={28} color="#FBFBFB" />
+                    </BtnMedical>
+                </MedicalContent>
+            )}
             {/* Modal cancelar */}
 
             <CancelattionModal
@@ -102,11 +103,11 @@ export const Home = ({ navigation }) => {
 
             {/* Modal Prontuário */}
 
-            <AppointmentModal
+            {/* <AppointmentModal
                 navigation={navigation}
                 visible={showModalAppointment}
                 setShowModalAppointment={setShowModalAppointment}
-            />
+            /> */}
 
             {/* Modal Paciente */}
             <ConsultModal
@@ -115,6 +116,12 @@ export const Home = ({ navigation }) => {
                 setShowModalConsult={setShowModalConsult}
                 setStatusModal={setStatusModal}
                 statusModal={statusModal}
+            />
+
+            <AppointmentModalPaciente
+                navigation={navigation}
+                visible={showModalAppointment}
+                setShowModalAppointment={setShowModalAppointment}
             />
         </ContainerConsulta>
     )
