@@ -22,6 +22,7 @@ import { Mapa } from './src/screens/Mapa/Mapa';
 import { Prescricao } from './src/screens/Prescricao/Prescricao';
 import Main from './src/components/Home/Main';
 import MainM from './src/components/Home/MainM';
+import { CameraExpo } from './src/components/Camera/Camera';
 
 
 
@@ -147,8 +148,8 @@ function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name='MainM'
-          component={MainM}
+          name='Camera'
+          component={CameraExpo}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

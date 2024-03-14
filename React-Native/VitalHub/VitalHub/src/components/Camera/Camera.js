@@ -4,6 +4,7 @@ import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesome, Feather  } from '@expo/vector-icons'
+import * as ImagePicker from 'expo-image-picker'
 
 /*
 
@@ -14,12 +15,13 @@ import { FontAwesome, Feather  } from '@expo/vector-icons'
 
 */
 
-export default function App() {
+export function CameraExpo() {
   const cameraRef = useRef(null)
   const [tipoCamera, setTipoCamera] = useState(CameraType.front)
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off)
   const [openModal, setOpenModal] = useState(false)
   const [photo, setPhoto] = useState(null)
+  const [imageUri, setImageUri] = useState(null)
 
   useEffect(() => {
     (async () => {
@@ -38,6 +40,13 @@ export default function App() {
       setOpenModal(true)
 
       console.log(photo);
+    }
+  }
+  
+   const obterImagem = async () => {
+    const result = await ImagePicker.launchCameraAsync()
+    if (!result.canceled) {
+        setImageUri(result.uri)
     }
   }
 

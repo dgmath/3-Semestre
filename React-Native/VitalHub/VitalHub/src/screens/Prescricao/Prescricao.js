@@ -8,6 +8,8 @@ import { ButtonAppointment, ButtonSecondaryText } from "../../components/Appoint
 import { InputLabel3 } from "../../components/Label/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ButtonCamera, TextButtonCamera } from "../../components/Button/Style"
+import { CameraExpo } from "../../components/Camera/Camera"
+
 //<MaterialCommunityIcons name="camera-plus-outline" size={24} color="black" />
 
 export const Prescricao = ({navigation}) => {
@@ -74,7 +76,7 @@ export const Prescricao = ({navigation}) => {
             </ContainerFoto>
 
             <ContainerLabel>
-                <ButtonCamera>
+                <ButtonCamera onPress={() => navigation.navigate('Camera')}>
                     <TextButtonCamera>
                         <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
                     </TextButtonCamera>

@@ -10,6 +10,7 @@ import { useState } from "react";
 import { PacienteConsulta } from "../../screens/PacienteConsulta/PacienteConsulta";
 import { ContentIcon } from "./Style";
 import { PerfilMedico } from "../../screens/Perfil/PerfilMedico";
+import { Prescricao } from "../../screens/Prescricao/Prescricao";
 
 
 
@@ -56,7 +57,7 @@ const Main = () => {
       })}
     // tabBarActiveTintColor: '#e91e63',
     >
-      <Tab.Screen name='Home' component={Home} />
+      <Tab.Screen name='Home' component={Prescricao} />
       {/* <Tab.Screen name='Home' component={MedicosConsulta} /> */}
 
       <Tab.Screen name="Perfil" component={Perfil} />
