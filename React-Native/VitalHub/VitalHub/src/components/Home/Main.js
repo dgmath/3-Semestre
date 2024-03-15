@@ -57,7 +57,7 @@ const Main = () => {
       })}
     // tabBarActiveTintColor: '#e91e63',
     >
-      <Tab.Screen name='Home' component={Prescricao} />
+      <Tab.Screen name='Home' component={Home} />
       {/* <Tab.Screen name='Home' component={MedicosConsulta} /> */}
 
       <Tab.Screen name="Perfil" component={Perfil} />

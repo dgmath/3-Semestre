@@ -3,8 +3,10 @@ import { Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-na
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
 import { useEffect, useState, useRef } from 'react';
-import { FontAwesome, Feather  } from '@expo/vector-icons'
+import { FontAwesome, Feather } from '@expo/vector-icons'
 import * as ImagePicker from 'expo-image-picker'
+import { ButtonAppointmentSecondary, ButtonModalAppointment, ButtonSecondaryText } from '../AppointmentModal/Styled';
+import { ButtonTitle } from '../Button/Style';
 
 /*
 
@@ -15,19 +17,23 @@ import * as ImagePicker from 'expo-image-picker'
 
 */
 
-export function CameraExpo() {
+export function CameraExpo({
+  visible,
+  setShowCameraModal,
+  setCameraCapture
+}) {
   const cameraRef = useRef(null)
-  const [tipoCamera, setTipoCamera] = useState(CameraType.front)
+  const [tipoCamera, setTipoCamera] = useState(CameraType.back)
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off)
   const [openModal, setOpenModal] = useState(false)
   const [photo, setPhoto] = useState(null)
-  const [imageUri, setImageUri] = useState(null)
+  // const [imageUri, setImageUri] = useState(null)
 
   useEffect(() => {
     (async () => {
       const { status: cameraStatus } = await Camera.requestCameraPermissionsAsync()
 
-      const {status: mediaStatus} = await MediaLibrary.requestPermissionsAsync()
+      const { status: mediaStatus } = await MediaLibrary.requestPermissionsAsync()
     })();
   }, [])
 
@@ -42,45 +48,50 @@ export function CameraExpo() {
       console.log(photo);
     }
   }
-  
-   const obterImagem = async () => {
-    const result = await ImagePicker.launchCameraAsync()
-    if (!result.canceled) {
-        setImageUri(result.uri)
-    }
+
+  async function obterImagem(){
+    await setCameraCapture(photo)
+
+    HandleClose()
   }
+
+  function HandleClose(){
+    setShowCameraModal(false)
+  }
+
+
 
   async function ClearPhoto() {
 
-      setPhoto(null)
+    setPhoto(null)
 
-      setOpenModal(false)
-    }
+    setOpenModal(false)
+  }
 
   async function UploadPhoto() {
-      await MediaLibrary.createAssetAsync(photo)
-      .then( () => {
+    await MediaLibrary.createAssetAsync(photo)
+      .then(() => {
         alert('Foto salva com sucesso')
       }).catch(() => {
         alert('Não foi possivel processar a foto')
       })
-    }
-  
+  }
+
 
   return (
-    <View style={styles.container}>
+    <Modal visible={visible} style={styles.container}>
       <Camera
-      flashMode={flash}
+        flashMode={flash}
         ref={cameraRef}
         style={styles.camera}
         type={tipoCamera}
       >
-          <TouchableOpacity onPress={() => setFlash(flash == Camera.Constants.FlashMode.off ? Camera.Constants.FlashMode.on : Camera.Constants.FlashMode.off)} style={styles.btnFlash}>
-            <Feather name={flash === Camera.Constants.FlashMode.on ? "zap" : "zap-off"} size={24} color="#fff" />
-          </TouchableOpacity>
+        <TouchableOpacity onPress={() => setFlash(flash == Camera.Constants.FlashMode.off ? Camera.Constants.FlashMode.on : Camera.Constants.FlashMode.off)} style={styles.btnFlash}>
+          <Feather name={flash === Camera.Constants.FlashMode.on ? "zap" : "zap-off"} size={24} color="#fff" />
+        </TouchableOpacity>
 
         <View style={styles.viewFlip}>
-          <TouchableOpacity onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)} style={styles.btnFlip}>
+          <TouchableOpacity onPress={() => setTipoCamera(tipoCamera == CameraType.back ? CameraType.front : CameraType.back)} style={styles.btnFlip}>
             <Text style={styles.textFlip}>Trocar</Text>
           </TouchableOpacity>
         </View>
@@ -94,25 +105,36 @@ export function CameraExpo() {
       <Modal animationType='slide' transparent={false} visible={openModal}>
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', margin: 20 }}>
-
+        <Image
+            style={{ width: '100%', height: 500, borderRadius: 15, marginTop: 50 }}
+            source={{ uri: photo }}
+          />
           <View style={{ margin: 10, flexDirection: 'row', gap: 20 }}>
 
-            <TouchableOpacity onPress={() => ClearPhoto()} style={styles.btnClear}>
+            {/* Botão */}
+            <View style={{ flex: 1 ,flexDirection: 'column', alignItems: 'center',}}>
+              <ButtonModalAppointment onPress={() => obterImagem() && ClearPhoto()}>
+                <ButtonTitle>Confirmar</ButtonTitle>
+              </ButtonModalAppointment>
+
+              <ButtonAppointmentSecondary onPress={() => ClearPhoto() && setShowCameraModal(false)}>
+                <ButtonSecondaryText>Cancelar</ButtonSecondaryText>
+              </ButtonAppointmentSecondary>
+            </View>
+
+            {/* <TouchableOpacity onPress={() => ClearPhoto()} style={styles.btnClear}>
               <FontAwesome name="trash" size={35} color="#ff0000" />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => UploadPhoto() && ClearPhoto()} style={styles.btnUpload}>
               <FontAwesome name="upload" size={35} color="#121212" />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
           </View>
-          <Image
-            style={{ width: '100%', height: 500, borderRadius: 15 }}
-            source={{ uri: photo }}
-          />
+      
         </View>
       </Modal>
-    </View>
+    </Modal>
   );
 }
 
@@ -164,7 +186,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnFlash: {
-   padding: 25,
-   marginTop: 20
+    padding: 25,
+    marginTop: 20
   },
 });

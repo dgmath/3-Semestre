@@ -3,7 +3,7 @@ import { Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-na
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library'
 import { useEffect, useState, useRef } from 'react';
-import { FontAwesome, Feather  } from '@expo/vector-icons'
+import { FontAwesome, Feather } from '@expo/vector-icons'
 
 /*
 
@@ -25,7 +25,7 @@ export default function App() {
     (async () => {
       const { status: cameraStatus } = await Camera.requestCameraPermissionsAsync()
 
-      const {status: mediaStatus} = await MediaLibrary.requestPermissionsAsync()
+      const { status: mediaStatus } = await MediaLibrary.requestPermissionsAsync()
     })();
   }, [])
 
@@ -42,33 +42,38 @@ export default function App() {
   }
 
   async function ClearPhoto() {
-
-      setPhoto(null)
-
-      setOpenModal(false)
-    }
+    await MediaLibrary.deleteAssetsAsync([photo])
+      .then(() => {
+        alert("Foto apagada com sucesso");
+        setPhoto(null);
+      })
+      .catch(() => {
+        alert("Falha ao apagar foto");
+      });
+    setOpenModal(false)
+  }
 
   async function UploadPhoto() {
-      await MediaLibrary.createAssetAsync(photo)
-      .then( () => {
+    await MediaLibrary.createAssetAsync(photo)
+      .then(() => {
         alert('Foto salva com sucesso')
       }).catch(() => {
         alert('Não foi possivel processar a foto')
       })
-    }
-  
+  }
+
 
   return (
     <View style={styles.container}>
       <Camera
-      flashMode={flash}
+        flashMode={flash}
         ref={cameraRef}
         style={styles.camera}
         type={tipoCamera}
       >
-          <TouchableOpacity onPress={() => setFlash(flash == Camera.Constants.FlashMode.off ? Camera.Constants.FlashMode.on : Camera.Constants.FlashMode.off)} style={styles.btnFlash}>
-            <Feather name={flash === Camera.Constants.FlashMode.on ? "zap" : "zap-off"} size={24} color="#fff" />
-          </TouchableOpacity>
+        <TouchableOpacity onPress={() => setFlash(flash == Camera.Constants.FlashMode.off ? Camera.Constants.FlashMode.on : Camera.Constants.FlashMode.off)} style={styles.btnFlash}>
+          <Feather name={flash === Camera.Constants.FlashMode.on ? "zap" : "zap-off"} size={24} color="#fff" />
+        </TouchableOpacity>
 
         <View style={styles.viewFlip}>
           <TouchableOpacity onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)} style={styles.btnFlip}>
@@ -92,7 +97,7 @@ export default function App() {
               <FontAwesome name="trash" size={35} color="#ff0000" />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => UploadPhoto() && ClearPhoto()} style={styles.btnUpload}>
+            <TouchableOpacity onPress={() => UploadPhoto()} style={styles.btnUpload}>
               <FontAwesome name="upload" size={35} color="#121212" />
             </TouchableOpacity>
 
@@ -155,7 +160,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnFlash: {
-   padding: 25,
-   marginTop: 20
+    padding: 25,
+    marginTop: 20
   },
 });
