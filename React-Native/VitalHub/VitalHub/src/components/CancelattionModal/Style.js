@@ -9,7 +9,7 @@ export const PatientModal = styled.View`
 `
 
 export const ModalContent = styled.View`
-    padding: 30px 30px 10px;
+    padding: 35px 30px 10px;
     width: 90%;
     border-radius: 10px;
     background-color: white;
